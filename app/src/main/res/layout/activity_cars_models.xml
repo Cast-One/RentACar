@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarsModelsActivity"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/catalogs"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:itemCount="5"
+        app:spanCount="2"
+        tools:context=".VehiculoFragment"
+        tools:listitem="@layout/fragment_vehiculo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
