@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import com.castillo.rentacar.Tools.RentCarManager;
@@ -28,37 +29,37 @@ public class CarsModelsActivity extends AppCompatActivity {
         rentCarTools = new RentCarTools(this);
         rentCarManager = RentCarManager.getInstance(this);
 
-        rentCarManager.listarVehiculos();
-        rentCarManager.listarCategoriasVehiculos();
-
         if (getIntent().getStringExtra("type_car") != null){
             showList(getIntent().getStringExtra("type_car"));
         }
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void showList(String type_car){
         type_car = type_car.toUpperCase();
+
         RecyclerView recyclerView = binding.list;
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        VehiculoRecyclerViewAdapter adapter = new VehiculoRecyclerViewAdapter(new ArrayList<>());
+        VehiculoRecyclerViewAdapter adapter = new VehiculoRecyclerViewAdapter(this, new ArrayList<>());
         recyclerView.setAdapter(adapter);
 
         switch (type_car){
             case "HATCHBACK":
-                adapter = new VehiculoRecyclerViewAdapter(rentCarManager.getLista_CategoriasVehiculos().get(0).getLista_vehiculos());
+                adapter = new VehiculoRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos().get(0).getLista_vehiculos());
             break;
             case "SEDAN":
-                adapter = new VehiculoRecyclerViewAdapter(rentCarManager.getLista_CategoriasVehiculos().get(1).getLista_vehiculos());
+                adapter = new VehiculoRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos().get(1).getLista_vehiculos());
             break;
             case "CAMIONETA":
-                adapter = new VehiculoRecyclerViewAdapter(rentCarManager.getLista_CategoriasVehiculos().get(2).getLista_vehiculos());
+                adapter = new VehiculoRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos().get(2).getLista_vehiculos());
             break;
             case "PICKUP":
-                adapter = new VehiculoRecyclerViewAdapter(rentCarManager.getLista_CategoriasVehiculos().get(3).getLista_vehiculos());
+                adapter = new VehiculoRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos().get(3).getLista_vehiculos());
             break;
         }
 
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 }

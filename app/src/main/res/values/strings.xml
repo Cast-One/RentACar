@@ -4,7 +4,8 @@
     <string name="info_v">Informática V</string>
     <string name="final_project">Proyecto Final</string>
     <string name="project_name">Rent a Car</string>
-    <string name="catalogs">Catálogos</string>
+    <string name="catalogs">Catálogo</string>
+    <string name="cars_models">Modelos</string>
     <string name="type_car_pickup">Pickup</string>
     <string name="type_car_camioneta">Camioneta</string>
     <string name="type_car_sedan">Sedan</string>

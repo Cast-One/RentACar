@@ -11,7 +11,7 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/catalogs"
+        android:text="@string/cars_models"
         android:textColor="@color/white"
         android:textStyle="bold|italic"
         android:textSize="30sp"

@@ -8,8 +8,9 @@ public class Vehiculo{
     long kilometraje;
     String matricula;
     int numero_plazas;
+    float precio;
 
-    public Vehiculo(int id, String marca, String modelo, short anio, long kilometraje, String matricula, int numero_plazas) {
+    public Vehiculo(int id, String marca, String modelo, short anio, long kilometraje, String matricula, int numero_plazas, float precio) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
@@ -17,6 +18,7 @@ public class Vehiculo{
         this.kilometraje = kilometraje;
         this.matricula = matricula;
         this.numero_plazas = numero_plazas;
+        this.precio = precio;
     }
 
     public int getId() {
@@ -73,5 +75,9 @@ public class Vehiculo{
 
     public void setNumero_plazas(int numero_plazas) {
         this.numero_plazas = numero_plazas;
+    }
+
+    public float getPrecio() {
+        return precio;
     }
 }

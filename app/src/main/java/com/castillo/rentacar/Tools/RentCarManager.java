@@ -26,10 +26,6 @@ public class RentCarManager {
         return instance;
     }
 
-    public static void setInstance(RentCarManager instance) {
-        RentCarManager.instance = instance;
-    }
-
     public boolean setCustomObjectPreference(Context context, String key, Object value){
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = settings.edit();
@@ -61,25 +57,25 @@ public class RentCarManager {
     }
 
     public void listarVehiculos(){
-        listaVehiculos.add(new Vehiculo(1, "Cupra", "León", (short)2019, 37151, "H00-01", 2));
-        listaVehiculos.add(new Vehiculo(2, "BMW", "Serie 1", (short)2019, 48066, "H00-02", 1));
-        listaVehiculos.add(new Vehiculo(3, "Fiat", "Argo", (short)2018, 56758, "H00-03", 3));
-        listaVehiculos.add(new Vehiculo(4, "Hyundai", "Grand i10", (short)2020, 35740, "H00-04", 4));
+        listaVehiculos.add(new Vehiculo(1, "Cupra", "León", (short)2019, 37151, "H00-01", 2, 12213f));
+        listaVehiculos.add(new Vehiculo(2, "BMW", "Serie 1", (short)2019, 48066, "H00-02", 1, 263289f));
+        listaVehiculos.add(new Vehiculo(3, "Fiat", "Argo", (short)2018, 56758, "H00-03", 3, 246775f));
+        listaVehiculos.add(new Vehiculo(4, "Hyundai", "Grand i10", (short)2020, 35740, "H00-04", 4, 185569f));
 
-        listaVehiculos.add(new Vehiculo(5, "Chevrolet", "Civic", (short)2020, 30183, "S00-05", 2));
-        listaVehiculos.add(new Vehiculo(6, "Honda", "Civic", (short)2019, 75034, "S00-06", 3));
-        listaVehiculos.add(new Vehiculo(7, "Hyundai", "Elantra", (short)2021, 32841, "S00-07", 4));
-        listaVehiculos.add(new Vehiculo(8, "KIA", "Forte", (short)2020, 43833, "S00-08", 4));
+        listaVehiculos.add(new Vehiculo(5, "Chevrolet", "Civic", (short)2020, 30183, "S00-05", 2, 266392f));
+        listaVehiculos.add(new Vehiculo(6, "Honda", "Civic", (short)2019, 75034, "S00-06", 3, 91106f));
+        listaVehiculos.add(new Vehiculo(7, "Hyundai", "Elantra", (short)2021, 32841, "S00-07", 4, 274176f));
+        listaVehiculos.add(new Vehiculo(8, "KIA", "Forte", (short)2020, 43833, "S00-08", 4, 258932f));
 
-        listaVehiculos.add(new Vehiculo(9, "Toyota", "Tundra", (short)2018, 78934, "C00-09", 3));
-        listaVehiculos.add(new Vehiculo(10, "Ford", "F-150 Raptor", (short)2020, 37202, "C00-10", 2));
-        listaVehiculos.add(new Vehiculo(11, "Jeep", "Gladiator", (short)2021, 48505, "C00-11", 2));
-        listaVehiculos.add(new Vehiculo(12, "GMC", "Sierra 1500", (short)2017, 50729, "C00-12", 4));
+        listaVehiculos.add(new Vehiculo(9, "Toyota", "Tundra", (short)2018, 78934, "C00-09", 3, 180494f));
+        listaVehiculos.add(new Vehiculo(10, "Ford", "F-150 Raptor", (short)2020, 37202, "C00-10", 2, 234620f));
+        listaVehiculos.add(new Vehiculo(11, "Jeep", "Gladiator", (short)2021, 48505, "C00-11", 2, 85210f));
+        listaVehiculos.add(new Vehiculo(12, "GMC", "Sierra 1500", (short)2017, 50729, "C00-12", 4, 116344f));
 
-        listaVehiculos.add(new Vehiculo(13, "Chevrolet", "Cheyenne", (short)2019, 50729, "P00-13", 4));
-        listaVehiculos.add(new Vehiculo(14, "Chevrolet", "Montana", (short)2019, 52087, "P00-14", 2));
-        listaVehiculos.add(new Vehiculo(15, "Ford", "Maverick Híbrida", (short)2018, 63898, "P00-15", 2));
-        listaVehiculos.add(new Vehiculo(16, "Ford", "Ranger", (short)2020, 61534, "P00-16", 4));
+        listaVehiculos.add(new Vehiculo(13, "Chevrolet", "Cheyenne", (short)2019, 50729, "P00-13", 4, 106783));
+        listaVehiculos.add(new Vehiculo(14, "Chevrolet", "Montana", (short)2019, 52087, "P00-14", 2, 97380f));
+        listaVehiculos.add(new Vehiculo(15, "Ford", "Maverick Híbrida", (short)2018, 63898, "P00-15", 2, 80418f));
+        listaVehiculos.add(new Vehiculo(16, "Ford", "Ranger", (short)2020, 61534, "P00-16", 4, 87788f));
     }
 
 
