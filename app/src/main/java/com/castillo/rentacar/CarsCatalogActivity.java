@@ -6,23 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.castillo.rentacar.databinding.ActivityMainBinding;
+import com.castillo.rentacar.Tools.RentCarTools;
+import com.castillo.rentacar.databinding.ActivityCarsCatalogBinding;
 import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
-import com.realpacific.clickshrinkeffect.ClickShrinkUtils;
 
-import java.io.Serializable;
+public class CarsCatalogActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity implements Serializable {
-
-    ActivityMainBinding binding;
+    ActivityCarsCatalogBinding binding;
+    RentCarTools rentCarTools;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityCarsCatalogBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
+        rentCarTools = new RentCarTools(this);
         listeners();
     }
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         new ClickShrinkEffect(binding.cardPickup);
 
         Bundle bundle = new Bundle();
-        Intent intent = new Intent(MainActivity.this, CarsModelsActivity.class);
+        Intent intent = new Intent(CarsCatalogActivity.this, CarsModelsActivity.class);
 
         binding.cardHatchback.setOnClickListener(v-> {
             bundle.putString("type_car", getString(R.string.type_car_hatchback));
@@ -59,5 +59,4 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             startActivity(intent);
         });
     }
-
 }

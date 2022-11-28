@@ -1,21 +1,22 @@
 package com.castillo.rentacar;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 
 import com.castillo.rentacar.Tools.RentCarTools;
-import com.castillo.rentacar.databinding.ActivityLoginBinding;
+import com.castillo.rentacar.databinding.ActivityStartBinding;
 import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
-public class LoginActivity extends AppCompatActivity {
-    ActivityLoginBinding binding;
+public class StartActivity extends AppCompatActivity {
+    ActivityStartBinding binding;
     RentCarTools tools;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        binding = ActivityStartBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
 
@@ -28,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         new ClickShrinkEffect(binding.textButtonStart);
 
         binding.textButtonStart.setOnClickListener(v -> {
-            tools.nextActivityFinish(MainActivity.class);
+            tools.nextActivityFinish(CarsCatalogActivity.class);
         });
 
     }

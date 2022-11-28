@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentACar">
         <activity
-            android:name=".CarsModelsActivity"
+            android:name=".CarsCatalogActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,14 +22,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".CarsModelsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

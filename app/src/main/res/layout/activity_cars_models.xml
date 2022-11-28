@@ -31,7 +31,6 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:itemCount="5"
         app:spanCount="2"
-        tools:context=".VehiculoFragment"
         tools:listitem="@layout/fragment_vehiculo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
