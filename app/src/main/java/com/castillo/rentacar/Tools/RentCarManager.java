@@ -118,4 +118,5 @@ public class RentCarManager {
         listaCategoriasVehiculos.add(new CategoriaVehiculo(vehiculos_CAMIONETA, TipoAuto.CAMIONETA));
         listaCategoriasVehiculos.add(new CategoriaVehiculo(vehiculos_PICKUP, TipoAuto.PICKUP));
     }
+
 }

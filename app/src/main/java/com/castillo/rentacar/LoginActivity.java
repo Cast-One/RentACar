@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.castillo.rentacar.Tools.RentCarTools;
 import com.castillo.rentacar.databinding.ActivityLoginBinding;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
@@ -24,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void listeners() {
+        new ClickShrinkEffect(binding.textButtonStart);
+
         binding.textButtonStart.setOnClickListener(v -> {
             tools.nextActivityFinish(MainActivity.class);
         });

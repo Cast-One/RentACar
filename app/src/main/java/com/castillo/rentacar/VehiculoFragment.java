@@ -12,34 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.castillo.rentacar.placeholder.PlaceholderContent;
+import java.util.ArrayList;
 
-/**
- * A fragment representing a list of Items.
- */
 public class VehiculoFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 2;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public VehiculoFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static VehiculoFragment newInstance(int columnCount) {
-        VehiculoFragment fragment = new VehiculoFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +46,7 @@ public class VehiculoFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new VehiculoRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new VehiculoRecyclerViewAdapter(new ArrayList<>()));
         }
         return view;
     }

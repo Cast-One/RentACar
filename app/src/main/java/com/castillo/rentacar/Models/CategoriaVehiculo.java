@@ -12,4 +12,19 @@ public class CategoriaVehiculo {
         this.enum_tipo_auto = enum_tipo_auto;
     }
 
+    public List<Vehiculo> getLista_vehiculos() {
+        return lista_vehiculos;
+    }
+
+    public void setLista_vehiculos(List<Vehiculo> lista_vehiculos) {
+        this.lista_vehiculos = lista_vehiculos;
+    }
+
+    public TipoAuto getEnum_tipo_auto() {
+        return enum_tipo_auto;
+    }
+
+    public void setEnum_tipo_auto(TipoAuto enum_tipo_auto) {
+        this.enum_tipo_auto = enum_tipo_auto;
+    }
 }

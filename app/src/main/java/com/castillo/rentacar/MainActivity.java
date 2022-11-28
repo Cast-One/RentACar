@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.castillo.rentacar.databinding.ActivityMainBinding;
+import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
+import com.realpacific.clickshrinkeffect.ClickShrinkUtils;
 
 import java.io.Serializable;
 
@@ -25,8 +27,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     }
 
     private void listeners() {
+        new ClickShrinkEffect(binding.cardHatchback);
+        new ClickShrinkEffect(binding.cardSedan);
+        new ClickShrinkEffect(binding.cardCamioneta);
+        new ClickShrinkEffect(binding.cardPickup);
+
         Bundle bundle = new Bundle();
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        Intent intent = new Intent(MainActivity.this, CarsModelsActivity.class);
 
         binding.cardHatchback.setOnClickListener(v-> {
             bundle.putString("type_car", getString(R.string.type_car_hatchback));
