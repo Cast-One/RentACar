@@ -1,4 +1,4 @@
-package com.castillo.rentacar;
+package com.castillo.rentacar.Vehicles;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;

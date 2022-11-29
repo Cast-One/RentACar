@@ -1,4 +1,4 @@
-package com.castillo.rentacar;
+package com.castillo.rentacar.Vehicles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.castillo.rentacar.R;
 import com.castillo.rentacar.Tools.RentCarManager;
 import com.castillo.rentacar.Tools.RentCarTools;
 import com.castillo.rentacar.databinding.ActivityCarsCatalogBinding;

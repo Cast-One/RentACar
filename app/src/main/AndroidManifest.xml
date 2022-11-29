@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.castillo.rentacar">
 
     <application
@@ -10,11 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentACar">
         <activity
-            android:name=".CarsCatalogActivity"
+            android:name=".Users.UsersActivity"
             android:exported="false" />
         <activity
+            android:name=".Vehicles.CarsCatalogActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".StartActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,8 +30,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CarsModelsActivity"
-            android:exported="false" />
+            android:name=".Vehicles.CarsModelsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

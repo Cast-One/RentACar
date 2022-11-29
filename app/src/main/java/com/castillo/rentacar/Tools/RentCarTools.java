@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.castillo.rentacar.R;
+
 public class RentCarTools {
     private final Context context;
     public RentCarTools(Context context) {
@@ -41,6 +46,12 @@ public class RentCarTools {
         return false;
     }
 
+    public void openFragment(Integer id_frame, Fragment fragment, FragmentTransaction transaction) {
+        transaction.setCustomAnimations(R.anim.fadein, R.anim.fadein, R.anim.fadeout, R.anim.fadeout);
+        transaction.replace(id_frame, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
     public static void hideKeyboard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);

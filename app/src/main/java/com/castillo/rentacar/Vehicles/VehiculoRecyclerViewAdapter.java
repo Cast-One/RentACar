@@ -1,17 +1,17 @@
-package com.castillo.rentacar;
+package com.castillo.rentacar.Vehicles;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.castillo.rentacar.Models.Vehiculo;
-import com.castillo.rentacar.databinding.ActivityCarsModelsBinding;
+import com.castillo.rentacar.R;
 import com.castillo.rentacar.databinding.FragmentVehiculoBinding;
 
 import java.util.List;
@@ -47,6 +47,10 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
             activity.rentCarManager.setListaVehiculos(activity.rentCarManager.getListaVehiculos());
             activity.showList(activity.getIntent().getStringExtra("type_car"));
         });
+
+        holder.touch_linear.setOnClickListener(v -> {
+            activity.rentCarTools.openFragment(R.id.fragmentView, new AddCarFragment(holder.mItem), activity.getSupportFragmentManager().beginTransaction());
+        });
     }
 
     @Override
@@ -61,6 +65,7 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
         TextView text_carName;
         TextView text_carYear;
         TextView text_carDistance;
+        LinearLayout touch_linear;
 
 
         public ViewHolder(FragmentVehiculoBinding binding) {
@@ -70,6 +75,7 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
             text_carName = binding.textNameCar;
             text_carYear = binding.textYearCar;
             text_carDistance = binding.textDistanceCar;
+            touch_linear = binding.touchLinear;
         }
     }
 }

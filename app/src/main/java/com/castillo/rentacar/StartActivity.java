@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.castillo.rentacar.Tools.RentCarManager;
 import com.castillo.rentacar.Tools.RentCarTools;
+import com.castillo.rentacar.Vehicles.CarsCatalogActivity;
 import com.castillo.rentacar.databinding.ActivityStartBinding;
 import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
