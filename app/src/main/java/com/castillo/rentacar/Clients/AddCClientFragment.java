@@ -24,9 +24,7 @@ public class AddCClientFragment extends Fragment {
     FragmentAddCClientBinding binding;
     ClientesCatalaogActivity activity;
 
-    public AddCClientFragment() {
-        // Required empty public constructor
-    }
+    public AddCClientFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,19 +84,24 @@ public class AddCClientFragment extends Fragment {
 
     boolean checkFields(){
         if (activity.rentCarTools.emptyField(binding.editTextNombre)){
-            activity.rentCarTools.showToas("Por favor revisa tu nombre", GenericToast.WARNING);
+            activity.rentCarTools.showToas("Por favor revisa el campo nombre", GenericToast.WARNING);
             return false;
         }
         if (activity.rentCarTools.emptyField(binding.editTextGenero)){
-            activity.rentCarTools.showToas("Escribe tu genero en el campo correspondiente", GenericToast.WARNING);
+            activity.rentCarTools.showToas("Escribe el género en el campo correspondiente", GenericToast.WARNING);
             return false;
         }
+
         if (activity.rentCarTools.emptyField(binding.editTextFechaNacimiento)){
-            activity.rentCarTools.showToas("Ingresa tu fecha de nacimiento", GenericToast.WARNING);
+            activity.rentCarTools.showToas("Ingresa la fecha de nacimiento", GenericToast.WARNING);
             return false;
         }
         if (activity.rentCarTools.emptyField(binding.editTextCurp)){
-            activity.rentCarTools.showToas("Tu CURP no es válido", GenericToast.WARNING);
+            activity.rentCarTools.showToas("El CURP no es válido", GenericToast.WARNING);
+            return false;
+        }
+        if (binding.editTextCurp.getText().toString().length() <18 || binding.editTextCurp.getText().toString().length() > 18){
+            activity.rentCarTools.showToas("El CURP debe tener 18 caracteres", GenericToast.WARNING);
             return false;
         }
 

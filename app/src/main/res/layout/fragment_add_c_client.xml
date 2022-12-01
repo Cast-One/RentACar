@@ -83,6 +83,7 @@
                 android:textColor="@color/white"
                 android:hint="Género"
                 android:textSize="13sp"
+                android:maxLength="1"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>
 
