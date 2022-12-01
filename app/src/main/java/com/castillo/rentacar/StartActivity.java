@@ -15,8 +15,10 @@ import com.castillo.rentacar.Models.Staff;
 import com.castillo.rentacar.Models.Store;
 import com.castillo.rentacar.Models.TipoAuto;
 import com.castillo.rentacar.Models.Vehiculo;
+import com.castillo.rentacar.Renta.RentActivity;
 import com.castillo.rentacar.Tools.RentCarManager;
 import com.castillo.rentacar.Tools.RentCarTools;
+import com.castillo.rentacar.Vehicles.CarCatalog.Car.Acciones.RentCarActivity;
 import com.castillo.rentacar.Vehicles.CarCatalog.CarsCatalogActivity;
 import com.castillo.rentacar.databinding.ActivityStartBinding;
 import com.google.gson.Gson;
@@ -135,12 +137,8 @@ public class StartActivity extends AppCompatActivity {
         new ClickShrinkEffect(binding.layoutRentas);
         binding.layoutVehicle.setOnClickListener(view -> tools.nextActivity(CarsCatalogActivity.class));
         binding.layoutClients.setOnClickListener(view -> tools.nextActivity(ClientesCatalaogActivity.class));
-        binding.layoutGerentes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tools.nextActivity(GerenteCatalogActivity.class);
-            }
-        });
+        binding.layoutGerentes.setOnClickListener(view -> tools.nextActivity(GerenteCatalogActivity.class));
+        binding.layoutRentas.setOnClickListener(view -> tools.nextActivity(RentActivity.class));
 
     }
 

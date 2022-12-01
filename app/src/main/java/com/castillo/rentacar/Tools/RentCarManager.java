@@ -7,6 +7,8 @@ import com.castillo.rentacar.Models.CategoriaVehiculo;
 import com.castillo.rentacar.Models.Cliente;
 import com.castillo.rentacar.Models.Clients;
 import com.castillo.rentacar.Models.Gerente;
+import com.castillo.rentacar.Models.Renta;
+import com.castillo.rentacar.Models.RentsCar;
 import com.castillo.rentacar.Models.Staff;
 import com.castillo.rentacar.Models.StatusCar;
 import com.castillo.rentacar.Models.Store;
@@ -119,5 +121,26 @@ public class RentCarManager {
     public void removeStaff(int index_gerente, Context context){
         this.staffList.remove(index_gerente);
         setStaffList(this.staffList, context);
+    }
+
+    /** Rentas **/
+    List<Renta> rentaList = new ArrayList<>();
+    public List<Renta> getRentaList() {
+        return rentaList;
+    }
+
+    public void setRentaList(List<Renta> rentaList, Context context) {
+        this.rentaList = rentaList;
+        setCustomObjectPreference(context, context.getResources().getString(R.string.key_rents), new RentsCar(this.rentaList));
+    }
+
+    public void addRent(Renta renta, Context context){
+        this.rentaList.add(renta);
+        setRentaList(this.rentaList, context);
+    }
+
+    public void removeRent(int index_rent, Context context){
+        this.rentaList.remove(index_rent);
+        setRentaList(this.rentaList, context);
     }
 }

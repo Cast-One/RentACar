@@ -30,12 +30,13 @@
             android:layout_marginEnd="20dp"
             android:orientation="vertical"
             android:layout_height="wrap_content">
+
             <EditText
+                android:id="@+id/editText_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:inputType="text"
-                android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="Nombre"
@@ -44,26 +45,12 @@
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/editText_apellido_P"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
                 android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="Apellido Materno"
-                android:textSize="13sp"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_cars"
-                android:layout_marginTop="20dp"
-                android:inputType="text"
-                android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="Apellido Paterno"
@@ -72,12 +59,26 @@
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/editText_apellido_M"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
                 android:inputType="text"
-                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Apellido Materno"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:id="@+id/editText_genero"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="Género"
@@ -86,12 +87,12 @@
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/editText_fechaNacimiento"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
                 android:inputType="text"
-                android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="Fecha de Nacimiento"
@@ -100,12 +101,12 @@
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/editText_curp"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
                 android:inputType="text"
-                android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="CURP"

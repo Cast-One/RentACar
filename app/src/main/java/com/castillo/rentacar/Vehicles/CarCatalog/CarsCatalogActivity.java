@@ -33,10 +33,6 @@ public class CarsCatalogActivity extends AppCompatActivity {
         CategoryRecyclerViewAdapter adapter = new CategoryRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos());
         recyclerView.setAdapter(adapter);
 
-        listeners();
     }
 
-    private void listeners() {
-
-    }
 }

@@ -27,104 +27,192 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:paddingStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:padding="20dp"
             android:orientation="vertical"
             android:layout_height="wrap_content">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="Nombre"
-                android:textSize="13sp"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
-                android:layout_marginTop="20dp"
-                android:inputType="text"
-                android:autofillHints="name"
                 tools:ignore="LabelFor"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:textColor="@color/white"
-                android:hint="Apellido Materno"
+                android:hint="Costo"
                 android:textSize="13sp"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>
 
-            <EditText
+            <LinearLayout
+                android:id="@+id/touch_linear"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_cars"
-                android:layout_marginTop="20dp"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="Apellido Paterno"
-                android:textSize="13sp"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_cars"
-                android:layout_marginTop="20dp"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="Género"
-                android:textSize="13sp"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"/>
+                <ImageView
+                    android:id="@+id/car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_default_cat"
+                    android:contentDescription="@null"/>
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_cars"
-                android:layout_marginTop="20dp"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="Fecha de Nacimiento"
-                android:textSize="13sp"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"/>
+                <TextView
+                    android:id="@+id/marca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    tools:ignore="SmallSp" />
 
-            <EditText
+                <TextView
+                    android:id="@+id/modelo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/ano"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/kilometraje"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    tools:ignore="SmallSp" />
+                <TextView
+                    android:id="@+id/matricula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    tools:ignore="SmallSp" />
+                <TextView
+                    android:id="@+id/placa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    tools:ignore="SmallSp" />
+                <TextView
+                    android:id="@+id/tipoAuto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    tools:ignore="SmallSp" />
+                <TextView
+                    android:id="@+id/seguro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text=""
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="3dp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bg_cars"
+                android:layout_height="40dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/corner_selected"/>
+                <Spinner
+                    android:id="@+id/spinerClient"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="CURP"
-                android:textSize="13sp"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"/>
+                android:layout_height="40dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/corner_selected"/>
+                <Spinner
+                    android:id="@+id/spinerGerente"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="40dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/corner_selected"/>
+                <Spinner
+                    android:id="@+id/spinnerSucursal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.braintreepayments.cardform.view.CardForm
+                android:id="@+id/card_form"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
+                android:background="@drawable/corner_selected"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:paddingBottom="20dp"/>
 
             <TextView
-                android:id="@+id/button_create_user"
+                android:id="@+id/button_rentcar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
-                android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:textSize="13sp"
-                android:text="Crear Gerente"
+                android:text="Rentar Carro"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColorHint="@color/gray"

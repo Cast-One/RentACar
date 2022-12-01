@@ -48,6 +48,13 @@ public class CarsModelsActivity extends AppCompatActivity {
         listeners();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter = new VehiculoRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos(), index_category);
+        binding.list.setAdapter(adapter);
+    }
+
     private void listeners() {
         new ClickShrinkEffect(binding.imgButtonAdd);
 
@@ -93,6 +100,15 @@ public class CarsModelsActivity extends AppCompatActivity {
             case 3:
                 for (Vehiculo vehicle: rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos()) {
                     if (vehicle.getStatusCar() == StatusCar.ROBADO){
+                        vehiculosFilter.add(vehicle);
+                    }
+                }
+                adapter = new VehiculoRecyclerViewAdapter(CarsModelsActivity.this, vehiculosFilter, index_category);
+                binding.list.setAdapter(adapter);
+                break;
+            case 4:
+                for (Vehiculo vehicle: rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos()) {
+                    if (vehicle.getStatusCar() == StatusCar.BAJA){
                         vehiculosFilter.add(vehicle);
                     }
                 }

@@ -83,6 +83,16 @@
             app:text="RB"
             app:selectedTextColor="@color/black"
             app:textColor="@color/white"  />
+        <com.addisonelliott.segmentedbutton.SegmentedButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:textSize="10sp"
+            android:padding="10dp"
+            app:drawableGravity="top"
+            app:text="BJ"
+            app:selectedTextColor="@color/black"
+            app:textColor="@color/white"  />
     </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
 
     <androidx.recyclerview.widget.RecyclerView

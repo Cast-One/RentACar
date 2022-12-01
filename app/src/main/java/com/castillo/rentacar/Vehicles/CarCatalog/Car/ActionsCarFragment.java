@@ -1,5 +1,6 @@
 package com.castillo.rentacar.Vehicles.CarCatalog.Car;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -79,9 +80,10 @@ public class ActionsCarFragment extends Fragment {
     }
 
     public void listenners(){
+        binding.voidScreen.setOnClickListener(view -> {});
         binding.baja.setOnClickListener(view -> {
-            activity.getRentCarTools().showToas("Auto Eliminado", GenericToast.ERROR);
-            activity.getRentCarManager().deleteCar(activity.getIndex_category(), index_car, getContext());
+            activity.getRentCarTools().showToas("Auto En Baja", GenericToast.ERROR);
+            activity.getRentCarManager().changeStatus(activity.getIndex_category(), index_car, StatusCar.BAJA, getContext());
             activity.CheckFilterAndUpdate();
             activity.getSupportFragmentManager().popBackStackImmediate();
         });
@@ -109,7 +111,13 @@ public class ActionsCarFragment extends Fragment {
         binding.renta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activity.getRentCarTools().nextActivity(RentCarActivity.class);
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(getContext(), RentCarActivity.class);
+                bundle.putInt("index_category", activity.getIndex_category());
+                bundle.putInt("index_car", index_car);
+                intent.putExtras(bundle);
+                activity.startActivity(intent);
+                activity.getSupportFragmentManager().popBackStackImmediate();
             }
         });
     }

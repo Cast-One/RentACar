@@ -4,7 +4,8 @@ public enum StatusCar {
     ACTIVO("Activo"),
     RENTADO("Rentado"),
     EN_MANTENIMIENTO("Mantenimiento"),
-    ROBADO("Robado");
+    ROBADO("Robado"),
+    BAJA("Baja");
 
     private final String nombre;
 
