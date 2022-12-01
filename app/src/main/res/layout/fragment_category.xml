@@ -17,7 +17,8 @@
         android:adjustViewBounds="true"
         android:contentDescription="@null"
         android:scaleType="fitXY"
-        android:src="@drawable/ic_cars_multiple" />
+        android:src="@drawable/ic_cars_multiple"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/text_categoryName"

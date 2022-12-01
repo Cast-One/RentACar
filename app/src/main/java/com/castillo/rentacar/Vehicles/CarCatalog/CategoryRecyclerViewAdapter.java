@@ -1,19 +1,18 @@
 package com.castillo.rentacar.Vehicles.CarCatalog;
 
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.castillo.rentacar.Models.CategoriaVehiculo;
+import com.castillo.rentacar.R;
 import com.castillo.rentacar.Vehicles.CarCatalog.Car.CarsModelsActivity;
 import com.castillo.rentacar.databinding.FragmentCategoryBinding;
 
@@ -51,7 +50,31 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
             intent.putExtras(bundle);
             activity.startActivity(intent);
         });
+
+        getImageByPosition(holder.image_category, position);
     }
+
+    private void getImageByPosition(ImageView imageView, int position) {
+
+        switch (position){
+            case 0:
+                imageView.setImageResource(R.drawable.ic_car_hatchback);
+                break;
+            case 1:
+                imageView.setImageResource(R.drawable.ic_car_sedan);
+                break;
+            case 2:
+                imageView.setImageResource(R.drawable.ic_car_camioneta);
+                break;
+            case 3:
+                imageView.setImageResource(R.drawable.ic_car_pickup);
+                break;
+            default:
+                imageView.setImageResource(R.drawable.img_car_gray);
+        }
+
+    }
+
 
     @Override
     public int getItemCount() {
