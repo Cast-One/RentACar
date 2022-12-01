@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import com.braintreepayments.cardform.view.CardForm;
@@ -13,10 +12,8 @@ import com.castillo.rentacar.Models.Gerente;
 import com.castillo.rentacar.Models.StatusCar;
 import com.castillo.rentacar.Models.Sucursal;
 import com.castillo.rentacar.Models.Vehiculo;
-import com.castillo.rentacar.R;
 import com.castillo.rentacar.Tools.RentCarManager;
 import com.castillo.rentacar.Tools.RentCarTools;
-import com.castillo.rentacar.databinding.ActivityCarsModelsBinding;
 import com.castillo.rentacar.databinding.ActivityRentCarBinding;
 
 import java.util.ArrayList;
@@ -76,7 +73,7 @@ public class RentCarActivity extends AppCompatActivity {
                 getLista_vehiculos().get(index_car);
         binding.modelo.setText(vehiculo.getModelo());
         binding.marca.setText(vehiculo.getMarca());
-        binding.ano.setText("Año: "+vehiculo.getAnio());
+        binding.ano.setText(String.format("Año: %s", vehiculo.getAnio()));
         binding.kilometraje.setText("Kilometraje " + vehiculo.getKilometraje());
         binding.matricula.setText(vehiculo.getMatricula());
         binding.placa.setText("Plazas: " + vehiculo.getNumero_plazas());

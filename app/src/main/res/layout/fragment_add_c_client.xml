@@ -95,7 +95,7 @@
                 android:inputType="text"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
-                android:hint="Fecha de Nacimiento"
+                android:hint="Fecha de Nacimiento  (dd-MM-AAAA)"
                 android:textSize="13sp"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>

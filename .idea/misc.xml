@@ -42,6 +42,7 @@
         <entry key="app/src/main/res/layout/activity_clientes_catalaog.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_clients_catalog.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/activity_gerente_catalog.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_rent_car.xml" value="0.1887031408308004" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_add_c_client.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_add_car.xml" value="0.2776268115942029" />
@@ -51,6 +52,7 @@
         <entry key="app/src/main/res/layout/fragment_clients_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_gerente_catalog.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_gerente_catalog_list.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_rent_car.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/fragment_vehiculo.xml" value="0.2776268115942029" />
       </map>
     </option>

@@ -11,8 +11,7 @@ import android.view.ViewGroup;
 
 import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.Models.Cliente;
-import com.castillo.rentacar.R;
-import com.castillo.rentacar.Vehicles.CarCatalog.Car.CarsModelsActivity;
+import com.castillo.rentacar.Tools.RentCarTools;
 import com.castillo.rentacar.databinding.FragmentAddCClientBinding;
 
 import java.text.ParseException;
@@ -65,21 +64,20 @@ public class AddCClientFragment extends Fragment {
                     char charGenero = binding.editTextGenero.getText().charAt(0);
                     Date fechaNacimiento = new Date();
 
-//                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-//                    try {
-//                        fechaNacimiento = dateFormat.parse(binding.editTextFechaNacimiento.getText().toString());
-//                    } catch (ParseException e) {
-//                        e.printStackTrace();
-//                    }
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                    try {
+                        fechaNacimiento = dateFormat.parse(binding.editTextFechaNacimiento.getText().toString());
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
 
-                    int randomClientNumber = new Random().nextInt(1445) + 32900;
+                    int randomClientNumber = new Random().nextInt(1445) + 329030;
 
-
-                    Cliente cliente = new Cliente(binding.editTextNombre.getText().toString(), apellido_Pat, apellido_Mat, charGenero, fechaNacimiento, binding.editTextCurp.toString(), String.valueOf(randomClientNumber));
+                    Cliente cliente = new Cliente(binding.editTextNombre.getText().toString(), apellido_Pat, apellido_Mat, charGenero, fechaNacimiento, binding.editTextCurp.getText().toString(), String.valueOf(randomClientNumber));
                     activity.getRentCarManager().addClient(cliente, getContext());
-//                    activity.getRentCarManager().addClient(new Cliente("Maria","Sanz",  "Sanz", 'F', new Date(), "MSS776421KDYZE82", "1234567890'"), getContext());
                     activity.getSupportFragmentManager().popBackStackImmediate();
                     activity.getAdapter().notifyDataSetChanged();
+                    RentCarTools.hideKeyboard(activity);
                 }
             }
         });
@@ -106,4 +104,8 @@ public class AddCClientFragment extends Fragment {
 
         return true;
     }
+
+
+
+
 }

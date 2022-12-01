@@ -44,7 +44,6 @@ public class ActionsCarFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = binding.getRoot();
 
-
         binding.baja.setVisibility(View.VISIBLE);
         binding.mantenimiento.setVisibility(View.VISIBLE);
         binding.seguro.setVisibility(View.VISIBLE);
