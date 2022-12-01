@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.Models.StatusCar;
 import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
@@ -49,6 +50,10 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
         holder.tipoAuto.setText(activity.getRentCarManager().getLista_CategoriasVehiculos().get(activity.getIndex_category()).getEnum_tipo_auto().getNombre());
 
         holder.touch_linear.setOnClickListener(v -> {
+            if (holder.mItem.getStatusCar() == StatusCar.RENTADO || holder.mItem.getStatusCar() == StatusCar.ENTREGADO){
+                activity.getRentCarTools().showToas("EL vehículo se encuentra en renta.", GenericToast.ERROR);
+                return;
+            }
             activity.rentCarTools.openFragment(R.id.fragmentView, new ActionsCarFragment(position), activity.getSupportFragmentManager().beginTransaction());
         });
 

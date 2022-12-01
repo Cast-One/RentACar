@@ -38,6 +38,7 @@
         app:borderWidth="1dp"
         app:dividerPadding="10dp"
         app:dividerWidth="1dp"
+
         app:position="0"
         app:selectedBackground="@color/white"
         app:radius="30dp"

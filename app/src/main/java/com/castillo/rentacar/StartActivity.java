@@ -11,6 +11,8 @@ import com.castillo.rentacar.Models.CategoriaVehiculo;
 import com.castillo.rentacar.Models.Cliente;
 import com.castillo.rentacar.Models.Clients;
 import com.castillo.rentacar.Models.Gerente;
+import com.castillo.rentacar.Models.Renta;
+import com.castillo.rentacar.Models.RentsCar;
 import com.castillo.rentacar.Models.Staff;
 import com.castillo.rentacar.Models.Store;
 import com.castillo.rentacar.Models.TipoAuto;
@@ -65,6 +67,14 @@ public class StartActivity extends AppCompatActivity {
         Staff staff = gson.fromJson(jsonStaff, Staff.class);
         if (staff != null) {
             rentCarManager.setStaffList(staff.getGerenteList(), this);
+        } else {
+            listarStaff();
+        }
+
+        String jsonRents = rentCarManager.getPreference(StartActivity.this, getResources().getString(R.string.key_rents));
+        RentsCar rentsCar = gson.fromJson(jsonRents, RentsCar.class);
+        if (rentsCar != null) {
+            rentCarManager.setRentaList(rentsCar.getRentaList(), this);
         } else {
             listarStaff();
         }

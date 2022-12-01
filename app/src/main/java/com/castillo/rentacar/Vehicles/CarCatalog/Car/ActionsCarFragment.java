@@ -51,7 +51,6 @@ public class ActionsCarFragment extends Fragment {
         binding.robo.setVisibility(View.VISIBLE);
         binding.venta.setVisibility(View.VISIBLE);
         binding.renta.setVisibility(View.VISIBLE);
-        binding.entrega.setVisibility(View.VISIBLE);
 
         switch (activity.getRentCarManager().getLista_CategoriasVehiculos().
                 get(activity.getIndex_category()).getLista_vehiculos().
@@ -60,7 +59,6 @@ public class ActionsCarFragment extends Fragment {
             case ROBADO:
                 binding.renta.setVisibility(View.GONE);
                 binding.venta.setVisibility(View.GONE);
-                binding.entrega.setVisibility(View.GONE);
                 binding.mantenimiento.setVisibility(View.GONE);
                 binding.robo.setVisibility(View.GONE);
                 break;
@@ -70,7 +68,6 @@ public class ActionsCarFragment extends Fragment {
                 get(index_car).getStatusCar() == StatusCar.ACTIVO){
             binding.venta.setVisibility(View.VISIBLE);
             binding.renta.setVisibility(View.VISIBLE);
-            binding.entrega.setVisibility(View.VISIBLE);
 
         }
 

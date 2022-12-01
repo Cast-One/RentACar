@@ -26,12 +26,12 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_title"
-        app:layout_goneMarginTop="20dp"
         app:layout_constraintVertical_bias="1.0"
         app:spanCount="2"
         tools:itemCount="5"
         tools:layout_editor_absoluteX="184dp"
-        tools:listitem="@layout/fragment_vehiculo" />
+        android:layout_marginTop="20dp"
+        tools:listitem="@layout/fragment_active_rents_list" />
 
 
     <FrameLayout

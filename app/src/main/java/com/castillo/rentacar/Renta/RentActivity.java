@@ -21,6 +21,14 @@ public class RentActivity extends AppCompatActivity {
 
     ActiveRentsRecyclerViewAdapter adapter;
 
+    public RentCarManager getRentCarManager() {
+        return rentCarManager;
+    }
+
+    public RentCarTools getRentCarTools() {
+        return rentCarTools;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

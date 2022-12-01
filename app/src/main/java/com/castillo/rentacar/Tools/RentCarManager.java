@@ -3,6 +3,7 @@ package com.castillo.rentacar.Tools;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.Models.CategoriaVehiculo;
 import com.castillo.rentacar.Models.Cliente;
 import com.castillo.rentacar.Models.Clients;
@@ -137,6 +138,19 @@ public class RentCarManager {
     public void addRent(Renta renta, Context context){
         this.rentaList.add(renta);
         setRentaList(this.rentaList, context);
+    }
+
+    public void deliverCar(int index_rent, Context context){
+        for (int i = 0; i < listaCategoriasVehiculos.size(); i++) {
+            for (int j = 0; j < listaCategoriasVehiculos.get(i).getLista_vehiculos().size(); j++) {
+                if (listaCategoriasVehiculos.get(i).getLista_vehiculos().get(j).getMatricula().equals(rentaList.get(index_rent).getVehiculo().getMatricula())){
+                    changeStatus(j,i,StatusCar.ENTREGADO,context );
+                    rentaList.get(index_rent).getVehiculo().setStatusCar(StatusCar.ENTREGADO);
+                    setRentaList(this.rentaList, context);
+                    break;
+                }
+            }
+        }
     }
 
     public void removeRent(int index_rent, Context context){

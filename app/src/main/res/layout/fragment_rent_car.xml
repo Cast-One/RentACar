@@ -126,21 +126,6 @@
             android:gravity="center"
             android:textColorHint="@color/gray"
             android:paddingHorizontal="10dp"/>
-        <TextView
-            android:id="@+id/entrega"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_cars"
-            android:layout_marginTop="20dp"
-            android:autofillHints="name"
-            tools:ignore="LabelFor"
-            android:textColor="@color/white"
-            android:textSize="13sp"
-            android:text="Entrega"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColorHint="@color/gray"
-            android:paddingHorizontal="10dp"/>
     </LinearLayout>
 
 
