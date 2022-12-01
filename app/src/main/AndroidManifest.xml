@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentACar">
         <activity
+            android:name=".Gerente.GerenteCatalogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Clients.ClientesCatalaogActivity"
+            android:exported="false" />
+        <activity
             android:name=".Rents.RentsActivity"
             android:exported="false" />
         <activity

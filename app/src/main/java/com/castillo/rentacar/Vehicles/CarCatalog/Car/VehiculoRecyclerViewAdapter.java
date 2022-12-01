@@ -61,7 +61,6 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public Vehiculo mItem;
         ImageView imgButton_delete;
-        ImageView img_car;
         TextView text_carName;
         TextView text_carYear;
         TextView text_carDistance;
@@ -71,7 +70,6 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
         public ViewHolder(FragmentVehiculoBinding binding) {
             super(binding.getRoot());
             imgButton_delete = binding.imgButtonDelete;
-            img_car = binding.imgCar;
             text_carName = binding.textNameCar;
             text_carYear = binding.textYearCar;
             text_carDistance = binding.textDistanceCar;

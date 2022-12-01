@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:padding="20dp"
+    android:id="@+id/view_container"
+    android:background="@drawable/border_menu"
     android:layout_margin="10dp">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView_category"
+    <ImageView
+        android:id="@+id/image_bg"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        app:cardCornerRadius="10dp">
+        android:layout_weight="0.8"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_cars_multiple" />
 
-        <ImageView
-            android:id="@+id/image_bg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.6"
-            android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_bg_pickup" />
-
-        <TextView
-            android:id="@+id/text_categoryName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_horizontal"
-            android:paddingHorizontal="5dp"
-            android:text="@string/type_car_pickup"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold|italic" />
-
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/text_categoryName"
+        android:layout_width="match_parent"
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:text="@string/type_car_pickup"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.castillo.rentacar.Clients.ClientesCatalaogActivity;
+import com.castillo.rentacar.Gerente.GerenteCatalogActivity;
 import com.castillo.rentacar.Models.CategoriaVehiculo;
 import com.castillo.rentacar.Models.Cliente;
 import com.castillo.rentacar.Models.Clients;
@@ -104,26 +106,42 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void listarStaff(){
-        List<Gerente> staffList = new ArrayList<>();
-        Gerente gerente = new Gerente("Vaqui", "Laurencio", "Laurencito", 'i', new Date(), "", "");
-        staffList.add(gerente);
+        List<Gerente> staffList = new ArrayList<>(); //HEGM990902MDFRZR05
+        staffList.add(new Gerente("Zaira", "Silvestre", "Vilar", 'F', new Date(), "ZSV887755MDFRZR93", "8352678321"));
+        staffList.add(new Gerente("Adil", "Lobato", "Andrade", 'M', new Date(), "ALB825610MDFRZR93", "2749300273"));
+        staffList.add(new Gerente("Aurelia", "Aurelia", "Palomino", 'F', new Date(), "AAP827381MDRZRK23", "2735182001"));
+        staffList.add(new Gerente("Xavier", "Mendoza", "Aguilar", 'M', new Date(), "XMA82639KIRZ082", "7273645127"));
+        staffList.add(new Gerente("Oscar", "Arteaga", "Chamorro", 'M', new Date(), "OAZ726491MDJRZR92", "008263124"));
 
         rentCarManager.setStaffList(staffList, this);
     }
 
     public void listarClientes(){
-        List<Cliente> clienteList = new ArrayList<>();
-        Cliente cliente = new Cliente("Vaqui", "Laurencio", "Laurencito", 'i', new Date(), "", "");
-        clienteList.add(cliente);
+        List<Cliente> clienteList = new ArrayList<>(); //HEGM990902MDFRZR05
+        clienteList.add(new Cliente("Zaira", "Silvestre", "Vilar", 'F', new Date(), "ZSV887755MDFRZR93", "8352678321"));
+        clienteList.add(new Cliente("Adil", "Lobato", "Andrade", 'M', new Date(), "ALB825610MDFRZR93", "2749300273"));
+        clienteList.add(new Cliente("Aurelia", "Aurelia", "Palomino", 'F', new Date(), "AAP827381MDRZRK23", "2735182001"));
+        clienteList.add(new Cliente("Xavier", "Mendoza", "Aguilar", 'M', new Date(), "XMA82639KIRZ082", "7273645127"));
+        clienteList.add(new Cliente("Oscar", "Arteaga", "Chamorro", 'M', new Date(), "OAZ726491MDJRZR92", "008263124"));
+
 
         rentCarManager.setClienteList(clienteList, this);
     }
 
     private void listeners() {
-        new ClickShrinkEffect(binding.textButtonStart);
+        new ClickShrinkEffect(binding.layoutVehicle);
+        new ClickShrinkEffect(binding.layoutClients);
+        new ClickShrinkEffect(binding.layoutGerentes);
+        new ClickShrinkEffect(binding.layoutRentas);
+        binding.layoutVehicle.setOnClickListener(view -> tools.nextActivity(CarsCatalogActivity.class));
+        binding.layoutClients.setOnClickListener(view -> tools.nextActivity(ClientesCatalaogActivity.class));
+        binding.layoutGerentes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tools.nextActivity(GerenteCatalogActivity.class);
+            }
+        });
 
-        binding.textButtonStart.setOnClickListener(v ->
-                tools.nextActivityFinish(CarsCatalogActivity.class));
     }
 
 }

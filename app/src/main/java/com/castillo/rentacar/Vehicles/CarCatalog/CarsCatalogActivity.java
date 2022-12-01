@@ -1,6 +1,7 @@
 package com.castillo.rentacar.Vehicles.CarCatalog;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,7 +29,7 @@ public class CarsCatalogActivity extends AppCompatActivity {
         rentCarManager = RentCarManager.getInstance(this);
 
         RecyclerView recyclerView = binding.list;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         CategoryRecyclerViewAdapter adapter = new CategoryRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos());
         recyclerView.setAdapter(adapter);
 

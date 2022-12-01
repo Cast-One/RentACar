@@ -7,8 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.castillo.rentacar.Models.CategoriaVehiculo;
@@ -42,7 +44,7 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
 
         holder.text_CategoryName.setText(holder.mItem.getEnum_tipo_auto().getNombre());
 
-        holder.cardView_category.setOnClickListener(v -> {
+        holder.linearLayoutContainer.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             Intent intent = new Intent(context, CarsModelsActivity.class);
             bundle.putInt("index_category", position);
@@ -58,16 +60,15 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public CategoriaVehiculo mItem;
-        CardView cardView_category;
         TextView text_CategoryName;
+        LinearLayout linearLayoutContainer;
         ImageView image_category;
 
         public ViewHolder(FragmentCategoryBinding binding) {
             super(binding.getRoot());
-            cardView_category = binding.cardViewCategory;
             text_CategoryName = binding.textCategoryName;
             image_category = binding.imageBg;
-
+            linearLayoutContainer = binding.viewContainer;
         }
 
     }

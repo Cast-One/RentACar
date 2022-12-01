@@ -23,7 +23,10 @@ public class RentCarTools {
             Activity activity = (Activity)context;
             Intent intent = new Intent(context, nextActivity);
             activity.startActivity(intent);
-        }catch(Exception ignored){}
+        }catch(Exception e){
+            System.out.println("ERRROR------");
+            e.getLocalizedMessage();
+        }
     }
 
     public void nextActivityFinish(Class nextActivity){

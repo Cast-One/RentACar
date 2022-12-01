@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Gerente.AddGerenteFragment">
+
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuevo Gerente"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:inputType="text"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Nombre"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Apellido Materno"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Apellido Paterno"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Género"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Fecha de Nacimiento"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="text"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="CURP"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <TextView
+                android:id="@+id/button_create_user"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:autofillHints="name"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:text="Crear Gerente"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

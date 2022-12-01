@@ -34,11 +34,11 @@
 
 
         <ImageView
-            android:id="@+id/img_car"
+            android:id="@+id/car"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/img_car_gray"
+            android:src="@drawable/ic_default_cat"
             android:contentDescription="@null"/>
 
         <TextView

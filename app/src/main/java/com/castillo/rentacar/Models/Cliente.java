@@ -9,4 +9,8 @@ public class Cliente extends Persona{
         super(nombre, paterno, materno, genero, fecha_nacimiento, curp);
         this.num_cliente = num_cliente;
     }
+
+    public String getNum_cliente() {
+        return num_cliente;
+    }
 }

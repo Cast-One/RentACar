@@ -9,4 +9,8 @@ public class Gerente extends Persona{
         super(nombre, paterno, materno, genero, fecha_nacimiento, curp);
         this.num_empleado = num_empleado;
     }
+
+    public String getNum_empleado() {
+        return num_empleado;
+    }
 }

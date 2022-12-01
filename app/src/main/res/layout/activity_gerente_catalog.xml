@@ -12,7 +12,7 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Catálogo Activo"
+        android:text="Catálogo de Gerentes"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -22,15 +22,24 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
-        android:name="com.castillo.rentacar.Vehicles.CategoryFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="20dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".Clients.ClientsFragment"
         app:layout_constraintTop_toBottomOf="@id/text_title"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layoutManager="LinearLayoutManager"
-        tools:context=".Vehicles.CategoryFragment"
-        tools:listitem="@layout/fragment_category" />
+        android:layout_margin="20dp"
+        tools:listitem="@layout/fragment_clients" />
+
+    <ImageView
+        android:id="@+id/addUser"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toTopOf="@id/text_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_add_profile"/>
+
 
     <FrameLayout
         android:id="@+id/fragmentView"
@@ -39,5 +48,5 @@
         android:visibility="visible"
         android:elevation="4dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
