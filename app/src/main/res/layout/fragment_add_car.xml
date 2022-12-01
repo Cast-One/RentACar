@@ -32,6 +32,7 @@
             android:orientation="vertical"
             android:layout_height="wrap_content">
             <EditText
+                android:id="@+id/text_marca"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
@@ -44,6 +45,7 @@
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/text_model"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
@@ -57,19 +59,22 @@
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/text_year"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
-                android:inputType="text"
+                android:inputType="number"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="Año"
                 android:textSize="13sp"
+                android:maxLength="4"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/text_matricula"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
@@ -79,18 +84,49 @@
                 android:textColor="@color/white"
                 android:hint="Matricula"
                 android:textSize="13sp"
+                android:maxLength="6"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>
 
             <EditText
+                android:id="@+id/text_numeroPlazas"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/bg_cars"
                 android:layout_marginTop="20dp"
-                android:inputType="text"
+                android:inputType="number"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
                 android:hint="Número de plazas"
+                android:textSize="13sp"
+                android:maxLength="1"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:id="@+id/text_kilometraje"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="Kilometraje"
+                android:textSize="13sp"
+                android:textColorHint="@color/gray"
+                android:paddingHorizontal="10dp"/>
+
+            <EditText
+                android:id="@+id/text_precio"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_cars"
+                android:layout_marginTop="20dp"
+                android:inputType="number"
+                tools:ignore="LabelFor"
+                android:textColor="@color/white"
+                android:hint="$ Precio"
                 android:textSize="13sp"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>

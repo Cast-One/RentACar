@@ -45,38 +45,35 @@ public class AddCClientFragment extends Fragment {
     }
 
     public void listeners(){
-        binding.buttonCreateUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (checkFields()){
-                    String apellido_Pat = "";
-                    String apellido_Mat = "";
-                    if (binding.editTextApellidoP.getText() != null){
-                        apellido_Pat = binding.editTextApellidoP.getText().toString();
-                    }
-
-                    if (binding.editTextApellidoM.getText() != null){
-                        apellido_Mat = binding.editTextApellidoM.getText().toString();
-                    }
-
-                    char charGenero = binding.editTextGenero.getText().charAt(0);
-                    Date fechaNacimiento = new Date();
-
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-                    try {
-                        fechaNacimiento = dateFormat.parse(binding.editTextFechaNacimiento.getText().toString());
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-
-                    int randomClientNumber = new Random().nextInt(1445) + 329030;
-
-                    Cliente cliente = new Cliente(binding.editTextNombre.getText().toString(), apellido_Pat, apellido_Mat, charGenero, fechaNacimiento, binding.editTextCurp.getText().toString(), String.valueOf(randomClientNumber));
-                    activity.getRentCarManager().addClient(cliente, getContext());
-                    activity.getSupportFragmentManager().popBackStackImmediate();
-                    activity.getAdapter().notifyDataSetChanged();
-                    RentCarTools.hideKeyboard(activity);
+        binding.buttonCreateUser.setOnClickListener(view -> {
+            if (checkFields()){
+                String apellido_Pat = "";
+                String apellido_Mat = "";
+                if (binding.editTextApellidoP.getText() != null){
+                    apellido_Pat = binding.editTextApellidoP.getText().toString();
                 }
+
+                if (binding.editTextApellidoM.getText() != null){
+                    apellido_Mat = binding.editTextApellidoM.getText().toString();
+                }
+
+                char charGenero = binding.editTextGenero.getText().charAt(0);
+                Date fechaNacimiento = new Date();
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                try {
+                    fechaNacimiento = dateFormat.parse(binding.editTextFechaNacimiento.getText().toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                int randomClientNumber = new Random().nextInt(1445) + 329030;
+
+                Cliente cliente = new Cliente(binding.editTextNombre.getText().toString(), apellido_Pat, apellido_Mat, charGenero, fechaNacimiento, binding.editTextCurp.getText().toString(), String.valueOf(randomClientNumber));
+                activity.getRentCarManager().addClient(cliente, getContext());
+                activity.getSupportFragmentManager().popBackStackImmediate();
+                activity.getAdapter().notifyDataSetChanged();
+                RentCarTools.hideKeyboard(activity);
             }
         });
     }
