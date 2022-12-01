@@ -72,6 +72,13 @@ public class RentCarManager {
                 setStatusCar(statusCar);
         setListaCategoriasVehiculos(this.listaCategoriasVehiculos, context);
     }
+
+    public void asegurarCar(int index_category, int index_car,Context context){
+        listaCategoriasVehiculos.get(index_category).
+                getLista_vehiculos().get(index_car).
+               setSeguro("XXXX");
+        setListaCategoriasVehiculos(this.listaCategoriasVehiculos, context);
+    }
     /** Clientes **/
     List<Cliente> clienteList = new ArrayList<>();
     public List<Cliente> getClienteList() {

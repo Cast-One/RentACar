@@ -10,6 +10,7 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.R;
 
 public class RentCarTools {
@@ -54,6 +55,17 @@ public class RentCarTools {
         transaction.replace(id_frame, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public void showToas(String message, String styleGeneric){
+        GenericToast.
+                showToast(context,          //activity
+                        message,    //message
+                        GenericToast.LENGTH_SHORT,   //duration
+                        styleGeneric, 	      //type
+                        GenericToast.DARK, 	      //mode
+                        GenericToast.DEFAULT_FONT,      //title font
+                        GenericToast.DEFAULT_FONT); //message font
     }
 
     public static void hideKeyboard(Activity activity) {

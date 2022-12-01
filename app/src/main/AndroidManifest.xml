@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentACar">
         <activity
+            android:name=".RentCarActivity"
+            android:exported="false" />
+        <activity
             android:name=".Gerente.GerenteCatalogActivity"
             android:exported="false" />
         <activity

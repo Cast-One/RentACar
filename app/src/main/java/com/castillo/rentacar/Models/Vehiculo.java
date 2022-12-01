@@ -11,8 +11,14 @@ public class Vehiculo{
     float precio;
     StatusCar statusCar;
 
+    String seguro; //Valor nulo inicial
+
     public void setStatusCar(StatusCar statusCar) {
         this.statusCar = statusCar;
+    }
+
+    public void setSeguro(String seguro) {
+        this.seguro = seguro;
     }
 
     public Vehiculo(int id, String marca, String modelo, short anio, long kilometraje, String matricula, int numero_plazas, float precio) {
@@ -24,6 +30,7 @@ public class Vehiculo{
         this.matricula = matricula;
         this.numero_plazas = numero_plazas;
         this.precio = precio;
+        this.seguro = null;
         this.statusCar = StatusCar.ACTIVO;
     }
 
@@ -37,6 +44,10 @@ public class Vehiculo{
 
     public StatusCar getStatusCar() {
         return statusCar;
+    }
+
+    public String getSeguro() {
+        return seguro;
     }
 
     public String getMarca() {

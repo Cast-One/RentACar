@@ -44,6 +44,7 @@
         <entry key="app/src/main/res/layout/fragment_clients_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_gerente_catalog.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_gerente_catalog_list.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_rent_car.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_vehiculo.xml" value="0.2776268115942029" />
       </map>
     </option>

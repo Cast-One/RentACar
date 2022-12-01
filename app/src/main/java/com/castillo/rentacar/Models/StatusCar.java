@@ -3,7 +3,8 @@ package com.castillo.rentacar.Models;
 public enum StatusCar {
     ACTIVO("Activo"),
     RENTADO("Rentado"),
-    EN_MANTENIMIENTO("Mantenimiento");
+    EN_MANTENIMIENTO("Mantenimiento"),
+    ROBADO("Robado");
 
     private final String nombre;
 

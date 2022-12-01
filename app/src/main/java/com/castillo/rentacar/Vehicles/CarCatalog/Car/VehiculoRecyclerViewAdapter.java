@@ -5,11 +5,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.castillo.rentacar.Models.StatusCar;
 import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
 import com.castillo.rentacar.databinding.FragmentVehiculoBinding;
@@ -39,18 +40,31 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.text_carName.setText( holder.mItem.getMarca() + " " + holder.mItem.getModelo());
-        holder.text_carYear.setText(holder.mItem.getStatusCar().getNombre());
-        holder.text_carDistance.setText(holder.mItem.getKilometraje() + " Km");
-
-        holder.imgButton_delete.setOnClickListener(view -> {
-            activity.rentCarManager.deleteCar(index_category, position, context);
-            notifyDataSetChanged();
-        });
+        holder.modelo.setText( holder.mItem.getModelo());
+        holder.marca.setText(holder.mItem.getMarca());
+        holder.ano.setText("Año: "+holder.mItem.getAnio());
+        holder.kilometraje.setText("Kilometraje " + holder.mItem.getKilometraje());
+        holder.matricucla.setText(holder.mItem.getMatricula());
+        holder.placas.setText("Plazas: " + holder.mItem.getNumero_plazas());
+        holder.tipoAuto.setText(activity.getRentCarManager().getLista_CategoriasVehiculos().get(activity.getIndex_category()).getEnum_tipo_auto().getNombre());
 
         holder.touch_linear.setOnClickListener(v -> {
-            activity.rentCarTools.openFragment(R.id.fragmentView, new RentCarFragment(position), activity.getSupportFragmentManager().beginTransaction());
+            activity.rentCarTools.openFragment(R.id.fragmentView, new ActionsCarFragment(position), activity.getSupportFragmentManager().beginTransaction());
         });
+
+        if (holder.mItem.getStatusCar() != StatusCar.ACTIVO) {
+            holder.linearLayoutStatus.setVisibility(View.VISIBLE);
+            holder.textViewStatus.setText(holder.mItem.getStatusCar().getNombre());
+        } else {
+            holder.linearLayoutStatus.setVisibility(View.GONE);
+        }
+
+        if (holder.mItem.getSeguro() != null) {
+            holder.seguro.setVisibility(View.VISIBLE);
+            holder.seguro.setText("Seguro: " + holder.mItem.getSeguro());
+        } else {
+            holder.seguro.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -60,20 +74,31 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public Vehiculo mItem;
-        ImageView imgButton_delete;
-        TextView text_carName;
-        TextView text_carYear;
-        TextView text_carDistance;
+        TextView marca;
+        TextView modelo;
+        TextView ano;
+        TextView kilometraje;
+        TextView matricucla;
+        TextView placas;
+        TextView tipoAuto;
+        LinearLayout linearLayoutStatus;
         LinearLayout touch_linear;
-
+        TextView textViewStatus;
+        TextView seguro;
 
         public ViewHolder(FragmentVehiculoBinding binding) {
             super(binding.getRoot());
-            imgButton_delete = binding.imgButtonDelete;
-            text_carName = binding.textNameCar;
-            text_carYear = binding.textYearCar;
-            text_carDistance = binding.textDistanceCar;
+            marca = binding.marca;
+            modelo = binding.modelo;
+            ano = binding.ano;
+            kilometraje = binding.kilometraje;
+            matricucla = binding.matriccula;
+            linearLayoutStatus = binding.linearStatus;
+            placas = binding.placa;
+            tipoAuto = binding.tipoAuto;
             touch_linear = binding.touchLinear;
+            textViewStatus = binding.textStatus;
+            seguro = binding.seguro;
         }
     }
 }

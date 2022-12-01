@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
 import com.castillo.rentacar.databinding.FragmentAddCarBinding;
@@ -40,10 +41,11 @@ public class AddCarFragment extends Fragment {
     }
 
     private void listeners() {
-        new ClickShrinkEffect(binding.textButtonFinish);
+        new ClickShrinkEffect(binding.buttonNewCar);
 
-        binding.textButtonFinish.setOnClickListener(v -> {
+        binding.buttonNewCar.setOnClickListener(v -> {
             Vehiculo vehiculo = new Vehiculo(1, "Vaqui", "Vaqui", (short)2019, 37151, "H00-01", 2, 12213f);
+            activity.getRentCarTools().showToas("Auto Agregado", GenericToast.SUCCESS);
             activity.getRentCarManager().addCar(activity.getIndex_category(), vehiculo, getContext());
             activity.adapter.notifyDataSetChanged();
             activity.getSupportFragmentManager().popBackStackImmediate();

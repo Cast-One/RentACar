@@ -54,6 +54,10 @@ public class CarsModelsActivity extends AppCompatActivity {
         return rentCarManager;
     }
 
+    public RentCarTools getRentCarTools() {
+        return rentCarTools;
+    }
+
     public VehiculoRecyclerViewAdapter getAdapter() {
         return adapter;
     }

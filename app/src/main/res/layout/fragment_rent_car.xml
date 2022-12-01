@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="50dp"
+    android:background="@color/transparent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Vehicles.CarCatalog.Car.RentCarFragment"
+    tools:context=".Vehicles.CarCatalog.Car.ActionsCarFragment"
     android:orientation="vertical">
 
     <View
@@ -18,163 +20,275 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/car_rent"
+        android:text="Detalle de Vehículo"
         android:textColor="@color/white"
-        android:textStyle="bold|italic"
-        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:gravity="center_horizontal"
-        android:paddingHorizontal="10dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toTopOf="@id/void_Screen"
-        app:layout_constraintEnd_toEndOf="@id/void_Screen"
-        app:layout_constraintStart_toStartOf="@id/void_Screen"/>
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/text_title"
-        app:layout_constraintBottom_toBottomOf="@id/void_Screen"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginHorizontal="20dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:animateLayoutChanges="true"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/text_carName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:layout_marginVertical="10dp"
-                android:textColor="@color/white"
-                android:textStyle="italic|bold"
-                android:textSize="20sp"
-                android:gravity="center"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="@string/client"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="20dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="text"
-                android:autofillHints="name"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="@string/manager"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="20dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="date"
-                android:autofillHints="@null"
-                tools:ignore="LabelFor"
-                android:textColor="@color/white"
-                android:hint="@string/date"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_vertical"
-                android:text="@string/pay_data"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="number"
-                android:autofillHints="creditCardNumber"
-                tools:ignore="LabelFor"
-                android:hint="@string/card_number"
-                android:textColor="@color/white"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="20dp"/>
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/text_title"
+            app:layout_constraintBottom_toBottomOf="@id/void_Screen"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginHorizontal="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_carName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:textColor="@color/white"
+                    android:textStyle="italic|bold"
+                    android:textSize="20sp"
+                    android:gravity="center"/>
 
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_cars"
+                    android:inputType="text"
+                    android:autofillHints="name"
+                    tools:ignore="LabelFor"
+                    android:textColor="@color/white"
+                    android:hint="@string/client"
+                    android:textColorHint="@color/gray"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_cars"
+                    android:inputType="text"
+                    android:autofillHints="name"
+                    tools:ignore="LabelFor"
+                    android:textColor="@color/white"
+                    android:hint="@string/manager"
+                    android:textColorHint="@color/gray"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
                     android:background="@drawable/bg_cars"
                     android:inputType="date"
-                    android:autofillHints="creditCardExpirationDate"
+                    android:autofillHints="@null"
                     tools:ignore="LabelFor"
-                    android:hint="@string/expiration_date"
+                    android:textColor="@color/white"
+                    android:hint="@string/date"
+                    android:textColorHint="@color/gray"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/pay_data"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_cars"
+                    android:inputType="number"
+                    android:autofillHints="creditCardNumber"
+                    tools:ignore="LabelFor"
+                    android:hint="@string/card_number"
                     android:textColor="@color/white"
                     android:textColorHint="@color/gray"
                     android:paddingHorizontal="10dp"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginBottom="20dp"/>
 
-                <EditText
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_cars"
+                        android:inputType="date"
+                        android:autofillHints="creditCardExpirationDate"
+                        tools:ignore="LabelFor"
+                        android:hint="@string/expiration_date"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/gray"
+                        android:paddingHorizontal="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_cars"
+                        android:inputType="number"
+                        android:autofillHints="creditCardSecurityCode"
+                        tools:ignore="LabelFor"
+                        android:textColor="@color/white"
+                        android:hint="@string/cvc"
+                        android:textColorHint="@color/gray"
+                        android:paddingHorizontal="10dp"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/textButton_finish"
+                    android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/bg_cars"
-                    android:inputType="number"
-                    android:autofillHints="creditCardSecurityCode"
-                    tools:ignore="LabelFor"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/finish"
                     android:textColor="@color/white"
-                    android:hint="@string/cvc"
-                    android:textColorHint="@color/gray"
-                    android:paddingHorizontal="10dp"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 
+        </ScrollView>
 
-            <TextView
-                android:id="@+id/textButton_finish"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_button"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="@string/finish"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/baja"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="20dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Dar de baja"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:id="@+id/mantenimiento"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="20dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Enviar a mantenmiento"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:id="@+id/seguro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="20dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Asignar Seguro"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:id="@+id/robo"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="20dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Reporte de Robo"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:id="@+id/venta"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="50dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Venta"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:id="@+id/renta"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="20dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Renta"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+        <TextView
+            android:id="@+id/entrega"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_cars"
+            android:layout_marginTop="20dp"
+            android:autofillHints="name"
+            tools:ignore="LabelFor"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="Entrega"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColorHint="@color/gray"
+            android:paddingHorizontal="10dp"/>
+    </LinearLayout>
 
-    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
