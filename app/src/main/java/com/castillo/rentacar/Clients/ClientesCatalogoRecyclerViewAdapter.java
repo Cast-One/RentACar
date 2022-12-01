@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.castillo.rentacar.Models.Cliente;
+import com.castillo.rentacar.Tools.RentCarTools;
 import com.castillo.rentacar.databinding.FragmentClientsBinding;
 
 import java.text.DateFormat;
@@ -50,9 +51,11 @@ public class ClientesCatalogoRecyclerViewAdapter extends RecyclerView.Adapter<Cl
         holder.textViewCurp.setText(holder.mItem.getCurp());
         holder.textViewNumCliente.setText(holder.mItem.getNum_cliente());
 
-        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-        String strDate = dateFormat.format(holder.mItem.getFecha_nacimiento());
-        holder.textViewFechaNacimiento.setText(strDate);
+//        DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+//        String strDate = dateFormat.format(holder.mItem.getFecha_nacimiento());
+//        holder.textViewFechaNacimiento.setText(strDate);
+
+        holder.textViewFechaNacimiento.setText(RentCarTools.dateToString(holder.mItem.getFecha_nacimiento()));
 
         holder.imageViewDelete.setOnClickListener(new View.OnClickListener() {
             @Override

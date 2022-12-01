@@ -3,6 +3,7 @@ package com.castillo.rentacar.Tools;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -12,6 +13,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.R;
+
+import java.util.Date;
+import java.util.Locale;
 
 public class RentCarTools {
     private final Context context;
@@ -75,5 +79,12 @@ public class RentCarTools {
             view = new View(activity);
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+    public static String dateToString(Date date) {
+        final String SDF_FORMAT = "dd-MM-yyyy";
+        SimpleDateFormat sdf = new SimpleDateFormat(SDF_FORMAT, Locale.getDefault());
+        return sdf.format(date);
     }
 }

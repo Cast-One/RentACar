@@ -83,6 +83,7 @@
                 android:textColor="@color/white"
                 android:hint="Género"
                 android:textSize="13sp"
+                android:maxLength="1"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>
 
@@ -95,7 +96,7 @@
                 android:inputType="text"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
-                android:hint="Fecha de Nacimiento"
+                android:hint="Fecha de Nacimiento  (dd-MM-AAAA)"
                 android:textSize="13sp"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"/>
