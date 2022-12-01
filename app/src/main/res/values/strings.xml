@@ -24,4 +24,8 @@
     <string name="report">Reporte</string>
     <string name="rent_success">Entrega</string>
 
+    <string name="key_store">KEY_STORE</string>
+    <string name="key_clients">KEY_CLIENTS</string>
+    <string name="key_staff">KEY_STAFF</string>
+
 </resources>

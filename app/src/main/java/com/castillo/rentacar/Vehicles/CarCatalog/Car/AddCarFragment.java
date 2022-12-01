@@ -18,13 +18,9 @@ import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 public class AddCarFragment extends Fragment {
     FragmentAddCarBinding binding;
     CarsModelsActivity activity;
-    int index_category;
 
     public AddCarFragment() {}
 
-    public AddCarFragment(int index_category) {
-        this.index_category = index_category;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +43,8 @@ public class AddCarFragment extends Fragment {
         new ClickShrinkEffect(binding.textButtonFinish);
 
         binding.textButtonFinish.setOnClickListener(v -> {
-            activity.rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos().add(new Vehiculo(1, "Vaqui", "Vaqui", (short)2019, 37151, "H00-01", 2, 12213f));
+            Vehiculo vehiculo = new Vehiculo(1, "Vaqui", "Vaqui", (short)2019, 37151, "H00-01", 2, 12213f);
+            activity.getRentCarManager().addCar(activity.getIndex_category(), vehiculo, getContext());
             activity.adapter.notifyDataSetChanged();
             activity.getSupportFragmentManager().popBackStackImmediate();
         });

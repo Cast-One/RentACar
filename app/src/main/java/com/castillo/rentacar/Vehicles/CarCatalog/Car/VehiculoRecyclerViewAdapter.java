@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
-import com.castillo.rentacar.Vehicles.RentCarFragment;
 import com.castillo.rentacar.databinding.FragmentVehiculoBinding;
 
 import java.util.List;
@@ -41,18 +40,16 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.text_carName.setText( holder.mItem.getMarca() + " " + holder.mItem.getModelo());
-        holder.text_carYear.setText( "Año: " + String.valueOf(holder.mItem.getAnio()));
+        holder.text_carYear.setText(holder.mItem.getStatusCar().getNombre());
         holder.text_carDistance.setText(holder.mItem.getKilometraje() + " Km");
 
         holder.imgButton_delete.setOnClickListener(view -> {
-            activity.rentCarManager.deleteCar(index_category, position);
+            activity.rentCarManager.deleteCar(index_category, position, context);
             notifyDataSetChanged();
-//            activity.rentCarManager.setListaVehiculos(activity.rentCarManager.getListaVehiculos());
-//            activity.showList(activity.getIntent().getStringExtra("type_car"));
         });
 
         holder.touch_linear.setOnClickListener(v -> {
-            activity.rentCarTools.openFragment(R.id.fragmentView, new RentCarFragment(holder.mItem), activity.getSupportFragmentManager().beginTransaction());
+            activity.rentCarTools.openFragment(R.id.fragmentView, new RentCarFragment(position), activity.getSupportFragmentManager().beginTransaction());
         });
     }
 

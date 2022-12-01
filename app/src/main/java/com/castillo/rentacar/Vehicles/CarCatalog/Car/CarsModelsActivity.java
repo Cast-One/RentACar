@@ -46,7 +46,19 @@ public class CarsModelsActivity extends AppCompatActivity {
         new ClickShrinkEffect(binding.imgButtonAdd);
 
         binding.imgButtonAdd.setOnClickListener(v -> {
-            rentCarTools.openFragment(R.id.fragmentView, new AddCarFragment(index_category), getSupportFragmentManager().beginTransaction());
+            rentCarTools.openFragment(R.id.fragmentView, new AddCarFragment(), getSupportFragmentManager().beginTransaction());
         });
+    }
+
+    public RentCarManager getRentCarManager() {
+        return rentCarManager;
+    }
+
+    public VehiculoRecyclerViewAdapter getAdapter() {
+        return adapter;
+    }
+
+    public int getIndex_category() {
+        return index_category;
     }
 }
