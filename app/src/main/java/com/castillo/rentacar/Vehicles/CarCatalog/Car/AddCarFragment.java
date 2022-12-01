@@ -1,5 +1,6 @@
-package com.castillo.rentacar.Vehicles;
+package com.castillo.rentacar.Vehicles.CarCatalog.Car;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,12 +17,13 @@ import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
 public class AddCarFragment extends Fragment {
     FragmentAddCarBinding binding;
-    Vehiculo vehiculo;
+    CarsModelsActivity activity;
+    int index_category;
 
     public AddCarFragment() {}
 
-    public AddCarFragment(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public AddCarFragment(int index_category) {
+        this.index_category = index_category;
     }
 
     @Override
@@ -29,19 +31,27 @@ public class AddCarFragment extends Fragment {
         super.onCreate(savedInstanceState);
         binding = FragmentAddCarBinding.inflate(getLayoutInflater());
 
+        activity = (CarsModelsActivity) getContext();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = binding.getRoot();
 
-        new ClickShrinkEffect(binding.textButtonFinish);
-
-        if (vehiculo != null){
-            Toast.makeText(requireContext(), vehiculo.getMarca() + " " +vehiculo.getModelo(), Toast.LENGTH_LONG).show();
-        }
-
+        listeners();
 
         return view;
     }
+
+    private void listeners() {
+        new ClickShrinkEffect(binding.textButtonFinish);
+
+        binding.textButtonFinish.setOnClickListener(v -> {
+            activity.rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos().add(new Vehiculo(1, "Vaqui", "Vaqui", (short)2019, 37151, "H00-01", 2, 12213f));
+            activity.adapter.notifyDataSetChanged();
+            activity.getSupportFragmentManager().popBackStackImmediate();
+        });
+    }
+
+
 }

@@ -1,4 +1,4 @@
-package com.castillo.rentacar.Vehicles;
+package com.castillo.rentacar.Vehicles.CarCatalog.Car;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
+import com.castillo.rentacar.Vehicles.RentCarFragment;
 import com.castillo.rentacar.databinding.FragmentVehiculoBinding;
 
 import java.util.List;
@@ -21,11 +22,12 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
     private final List<Vehiculo> mValues;
     CarsModelsActivity activity;
     Context context;
+    int index_category;
 
-    public VehiculoRecyclerViewAdapter(Context context, List<Vehiculo> items) {
+    public VehiculoRecyclerViewAdapter(Context context, List<Vehiculo> items, int index_category) {
         this.context = context;
         mValues = items;
-
+        this.index_category = index_category;
         activity = (CarsModelsActivity) context;
     }
 
@@ -43,13 +45,14 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
         holder.text_carDistance.setText(holder.mItem.getKilometraje() + " Km");
 
         holder.imgButton_delete.setOnClickListener(view -> {
-            activity.rentCarManager.getListaVehiculos().remove(holder.mItem);
-            activity.rentCarManager.setListaVehiculos(activity.rentCarManager.getListaVehiculos());
-            activity.showList(activity.getIntent().getStringExtra("type_car"));
+            activity.rentCarManager.deleteCar(index_category, position);
+            notifyDataSetChanged();
+//            activity.rentCarManager.setListaVehiculos(activity.rentCarManager.getListaVehiculos());
+//            activity.showList(activity.getIntent().getStringExtra("type_car"));
         });
 
         holder.touch_linear.setOnClickListener(v -> {
-            activity.rentCarTools.openFragment(R.id.fragmentView, new AddCarFragment(holder.mItem), activity.getSupportFragmentManager().beginTransaction());
+            activity.rentCarTools.openFragment(R.id.fragmentView, new RentCarFragment(holder.mItem), activity.getSupportFragmentManager().beginTransaction());
         });
     }
 

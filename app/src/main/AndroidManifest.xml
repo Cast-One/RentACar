@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RentACar">
         <activity
+            android:name=".Rents.RentsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Users.UsersActivity"
             android:exported="false" />
         <activity
-            android:name=".Vehicles.CarsCatalogActivity"
+            android:name=".Vehicles.CarCatalog.CarsCatalogActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -30,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Vehicles.CarsModelsActivity"
+            android:name=".Vehicles.CarCatalog.Car.CarsModelsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

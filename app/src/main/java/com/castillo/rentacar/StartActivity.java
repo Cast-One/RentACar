@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.castillo.rentacar.Tools.RentCarManager;
 import com.castillo.rentacar.Tools.RentCarTools;
-import com.castillo.rentacar.Vehicles.CarsCatalogActivity;
+import com.castillo.rentacar.Vehicles.CarCatalog.CarsCatalogActivity;
 import com.castillo.rentacar.databinding.ActivityStartBinding;
 import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
 
@@ -26,7 +26,6 @@ public class StartActivity extends AppCompatActivity {
         tools = new RentCarTools(this);
         rentCarManager = RentCarManager.getInstance(this);
 
-        rentCarManager.listarVehiculos();
         rentCarManager.listarCategoriasVehiculos();
 
         listeners();

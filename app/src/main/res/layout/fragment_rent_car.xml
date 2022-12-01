@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Vehicles.CarCatalog.Car.AddCarFragment"
+    tools:context=".Vehicles.RentCarFragment"
     android:orientation="vertical">
 
     <View
@@ -18,7 +18,7 @@
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar vehiculo"
+        android:text="@string/car_rent"
         android:textColor="@color/white"
         android:textStyle="bold|italic"
         android:textSize="30sp"
@@ -46,6 +46,18 @@
             android:animateLayoutChanges="true"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/text_carName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:layout_marginVertical="10dp"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -54,7 +66,7 @@
                 android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
-                android:hint="Marca"
+                android:hint="@string/client"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"
                 android:layout_marginBottom="20dp"/>
@@ -67,7 +79,7 @@
                 android:autofillHints="name"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
-                android:hint="Modelo"
+                android:hint="@string/manager"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"
                 android:layout_marginBottom="20dp"/>
@@ -76,40 +88,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/bg_cars"
-                android:inputType="number"
+                android:inputType="date"
                 android:autofillHints="@null"
                 tools:ignore="LabelFor"
                 android:textColor="@color/white"
-                android:hint="Año"
+                android:hint="@string/date"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"
                 android:layout_marginBottom="20dp"/>
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="text"
-                android:autofillHints="creditCardNumber"
-                tools:ignore="LabelFor"
-                android:hint="Matricula"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/pay_data"
                 android:textColor="@color/white"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="20dp"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/bg_cars"
-                android:inputType="number"
-                android:autofillHints="creditCardNumber"
-                tools:ignore="LabelFor"
-                android:hint="Número de plazas"
-                android:textColor="@color/white"
-                android:textColorHint="@color/gray"
-                android:paddingHorizontal="10dp"
-                android:layout_marginBottom="20dp"/>
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -118,11 +115,49 @@
                 android:inputType="number"
                 android:autofillHints="creditCardNumber"
                 tools:ignore="LabelFor"
-                android:hint="Precio"
+                android:hint="@string/card_number"
                 android:textColor="@color/white"
                 android:textColorHint="@color/gray"
                 android:paddingHorizontal="10dp"
                 android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_cars"
+                    android:inputType="date"
+                    android:autofillHints="creditCardExpirationDate"
+                    tools:ignore="LabelFor"
+                    android:hint="@string/expiration_date"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/gray"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_cars"
+                    android:inputType="number"
+                    android:autofillHints="creditCardSecurityCode"
+                    tools:ignore="LabelFor"
+                    android:textColor="@color/white"
+                    android:hint="@string/cvc"
+                    android:textColorHint="@color/gray"
+                    android:paddingHorizontal="10dp"/>
+
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/textButton_finish"
