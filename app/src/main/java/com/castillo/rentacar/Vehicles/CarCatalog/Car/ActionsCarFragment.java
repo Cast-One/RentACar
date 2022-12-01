@@ -12,6 +12,7 @@ import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.Models.StatusCar;
 import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
+import com.castillo.rentacar.Vehicles.CarCatalog.Car.Acciones.RentCarActivity;
 import com.castillo.rentacar.Vehicles.CarCatalog.Car.CarsModelsActivity;
 import com.castillo.rentacar.databinding.FragmentRentCarBinding;
 
@@ -42,8 +43,36 @@ public class ActionsCarFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = binding.getRoot();
 
-        new ClickShrinkEffect(binding.textButtonFinish);
-        
+
+        binding.baja.setVisibility(View.VISIBLE);
+        binding.mantenimiento.setVisibility(View.VISIBLE);
+        binding.seguro.setVisibility(View.VISIBLE);
+        binding.robo.setVisibility(View.VISIBLE);
+        binding.venta.setVisibility(View.VISIBLE);
+        binding.renta.setVisibility(View.VISIBLE);
+        binding.entrega.setVisibility(View.VISIBLE);
+
+        switch (activity.getRentCarManager().getLista_CategoriasVehiculos().
+                get(activity.getIndex_category()).getLista_vehiculos().
+                get(index_car).getStatusCar()){
+            case EN_MANTENIMIENTO:
+            case ROBADO:
+                binding.renta.setVisibility(View.GONE);
+                binding.venta.setVisibility(View.GONE);
+                binding.entrega.setVisibility(View.GONE);
+                binding.mantenimiento.setVisibility(View.GONE);
+                binding.robo.setVisibility(View.GONE);
+                break;
+        }
+        if (activity.getRentCarManager().getLista_CategoriasVehiculos().
+                get(activity.getIndex_category()).getLista_vehiculos().
+                get(index_car).getStatusCar() == StatusCar.ACTIVO){
+            binding.venta.setVisibility(View.VISIBLE);
+            binding.renta.setVisibility(View.VISIBLE);
+            binding.entrega.setVisibility(View.VISIBLE);
+
+        }
+
         listenners();
 
         return view;
@@ -53,13 +82,13 @@ public class ActionsCarFragment extends Fragment {
         binding.baja.setOnClickListener(view -> {
             activity.getRentCarTools().showToas("Auto Eliminado", GenericToast.ERROR);
             activity.getRentCarManager().deleteCar(activity.getIndex_category(), index_car, getContext());
-            activity.getAdapter().notifyDataSetChanged();
+            activity.CheckFilterAndUpdate();
             activity.getSupportFragmentManager().popBackStackImmediate();
         });
         binding.mantenimiento.setOnClickListener(view -> {
             activity.getRentCarTools().showToas("Auto en mantenimiento", GenericToast.WARNING);
             activity.getRentCarManager().changeStatus(activity.getIndex_category(), index_car, StatusCar.EN_MANTENIMIENTO, getContext());
-            activity.getAdapter().notifyDataSetChanged();
+            activity.CheckFilterAndUpdate();
             activity.getSupportFragmentManager().popBackStackImmediate();
         });
         binding.seguro.setOnClickListener(new View.OnClickListener() {
@@ -67,15 +96,21 @@ public class ActionsCarFragment extends Fragment {
             public void onClick(View view) {
                 activity.getRentCarTools().showToas("Seguro asignado", GenericToast.SUCCESS);
                 activity.getRentCarManager().asegurarCar(activity.getIndex_category(), index_car, getContext());
-                activity.getAdapter().notifyDataSetChanged();
+                activity.CheckFilterAndUpdate();
                 activity.getSupportFragmentManager().popBackStackImmediate();
             }
         });
         binding.robo.setOnClickListener(view -> {
             activity.getRentCarTools().showToas("Auto reportado como Robado", GenericToast.WARNING);
             activity.getRentCarManager().changeStatus(activity.getIndex_category(), index_car, StatusCar.ROBADO, getContext());
-            activity.getAdapter().notifyDataSetChanged();
+            activity.CheckFilterAndUpdate();
             activity.getSupportFragmentManager().popBackStackImmediate();
+        });
+        binding.renta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.getRentCarTools().nextActivity(RentCarActivity.class);
+            }
         });
     }
 }

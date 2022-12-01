@@ -7,11 +7,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.addisonelliott.segmentedbutton.SegmentedButtonGroup;
+import com.castillo.rentacar.Models.StatusCar;
+import com.castillo.rentacar.Models.Vehiculo;
 import com.castillo.rentacar.R;
 import com.castillo.rentacar.Tools.RentCarManager;
 import com.castillo.rentacar.Tools.RentCarTools;
 import com.castillo.rentacar.databinding.ActivityCarsModelsBinding;
 import com.realpacific.clickshrinkeffect.ClickShrinkEffect;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CarsModelsActivity extends AppCompatActivity {
 
@@ -34,10 +40,10 @@ public class CarsModelsActivity extends AppCompatActivity {
 
         index_category = getIntent().getIntExtra("index_category", 0);
 
-        RecyclerView recyclerView = binding.list;
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
+        binding.list.setLayoutManager(new GridLayoutManager(this, 2));
         adapter = new VehiculoRecyclerViewAdapter(this, rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos(), index_category);
-        recyclerView.setAdapter(adapter);
+        binding.list.setAdapter(adapter);
 
         listeners();
     }
@@ -48,6 +54,52 @@ public class CarsModelsActivity extends AppCompatActivity {
         binding.imgButtonAdd.setOnClickListener(v -> {
             rentCarTools.openFragment(R.id.fragmentView, new AddCarFragment(), getSupportFragmentManager().beginTransaction());
         });
+
+        binding.buttonGroupLordOfTheRings.setOnPositionChangedListener(new SegmentedButtonGroup.OnPositionChangedListener() {
+            @Override
+            public void onPositionChanged(final int position) {
+                CheckFilterAndUpdate();
+            }
+        });
+
+    }
+
+    public void  CheckFilterAndUpdate(){
+        List<Vehiculo> vehiculosFilter = new ArrayList<>();
+        // Handle stuff here
+        switch (binding.buttonGroupLordOfTheRings.getPosition()) {
+            case 0:
+                adapter = new VehiculoRecyclerViewAdapter(CarsModelsActivity.this, rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos(), index_category);
+                binding.list.setAdapter(adapter);
+                break;
+            case 1:
+                for (Vehiculo vehicle: rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos()) {
+                    if (vehicle.getStatusCar() == StatusCar.ACTIVO){
+                        vehiculosFilter.add(vehicle);
+                    }
+                }
+                adapter = new VehiculoRecyclerViewAdapter(CarsModelsActivity.this, vehiculosFilter, index_category);
+                binding.list.setAdapter(adapter);
+                break;
+            case 2:
+                for (Vehiculo vehicle: rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos()) {
+                    if (vehicle.getStatusCar() == StatusCar.EN_MANTENIMIENTO){
+                        vehiculosFilter.add(vehicle);
+                    }
+                }
+                adapter = new VehiculoRecyclerViewAdapter(CarsModelsActivity.this, vehiculosFilter, index_category);
+                binding.list.setAdapter(adapter);
+                break;
+            case 3:
+                for (Vehiculo vehicle: rentCarManager.getLista_CategoriasVehiculos().get(index_category).getLista_vehiculos()) {
+                    if (vehicle.getStatusCar() == StatusCar.ROBADO){
+                        vehiculosFilter.add(vehicle);
+                    }
+                }
+                adapter = new VehiculoRecyclerViewAdapter(CarsModelsActivity.this, vehiculosFilter, index_category);
+                binding.list.setAdapter(adapter);
+                break;
+        }
     }
 
     public RentCarManager getRentCarManager() {

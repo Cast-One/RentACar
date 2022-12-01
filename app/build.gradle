@@ -52,5 +52,5 @@ dependencies {
     implementation 'com.github.realpacific:click-shrink-effect:2.0'
 
     implementation 'com.github.smdi:GenericToast:3.0.0'
-
+    implementation 'com.github.addisonelliott:SegmentedButton:3.1.9'
 }
