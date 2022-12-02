@@ -69,6 +69,17 @@ public class RentCarManager {
         setListaCategoriasVehiculos(this.listaCategoriasVehiculos, context);
     }
 
+    public boolean validateMatricula(String matricula){
+        for (int i = 0; i < listaCategoriasVehiculos.size(); i++) {
+            for (int j = 0; j < listaCategoriasVehiculos.get(i).getLista_vehiculos().size(); j++) {
+                if (listaCategoriasVehiculos.get(i).getLista_vehiculos().get(j).getMatricula().equals(matricula)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public void changeStatus(int index_category, int index_car, StatusCar statusCar, Context context){
         listaCategoriasVehiculos.get(index_category).
                 getLista_vehiculos().get(index_car).
@@ -140,17 +151,36 @@ public class RentCarManager {
         setRentaList(this.rentaList, context);
     }
 
-    public void deliverCar(int index_rent, Context context){
-        for (int i = 0; i < listaCategoriasVehiculos.size(); i++) {
-            for (int j = 0; j < listaCategoriasVehiculos.get(i).getLista_vehiculos().size(); j++) {
-                if (listaCategoriasVehiculos.get(i).getLista_vehiculos().get(j).getMatricula().equals(rentaList.get(index_rent).getVehiculo().getMatricula())){
-                    changeStatus(j,i,StatusCar.ENTREGADO,context );
-                    rentaList.get(index_rent).getVehiculo().setStatusCar(StatusCar.ENTREGADO);
-                    setRentaList(this.rentaList, context);
-                    break;
+    public void deliverCar(Renta renta, int index_rent, Context context){
+        changeStatus(renta.getIndex_Category(), renta.getIndex_Car(),StatusCar.ENTREGADO,context );
+        rentaList.get(index_rent).getVehiculo().setStatusCar(StatusCar.ENTREGADO);
+        setRentaList(this.rentaList, context);
+
+//        for (int i = 0; i < listaCategoriasVehiculos.size(); i++) {
+//            for (int j = 0; j < listaCategoriasVehiculos.get(i).getLista_vehiculos().size(); j++) {
+//                if (listaCategoriasVehiculos.get(i).getLista_vehiculos().get(j).getMatricula().equals(rentaList.get(index_rent).getVehiculo().getMatricula())){
+//                    changeStatus(j,i,StatusCar.ENTREGADO,context );
+//                    rentaList.get(index_rent).getVehiculo().setStatusCar(StatusCar.ENTREGADO);
+//                    setRentaList(this.rentaList, context);
+//                    break;
+//                }
+//            }
+//        }
+    }
+
+    public void nextDay(Context context, RentCarTools rentCarTools){
+        for (Renta renta: rentaList) {
+            if (renta.getVehiculo().getStatusCar() == StatusCar.ENTREGADO) {
+                renta.setDeuda(renta.getDeuda()+1000);
+                renta.setDiasAdeuda(renta.getDiasAdeuda()+1);
+                if (renta.getDiasAdeuda() == 4){
+                    getRentaList().remove(renta);
+                    rentCarTools.showToas(renta.getVehiculo().getMatricula() + "pasa a ser Robado.", GenericToast.SUCCESS);
+                    changeStatus(renta.getIndex_Category(), renta.getIndex_Car(),StatusCar.ROBADO,context );
                 }
             }
         }
+        setRentaList(this.rentaList, context);
     }
 
     public void removeRent(int index_rent, Context context){

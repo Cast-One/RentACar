@@ -57,7 +57,7 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
         holder.tipoAuto.setText(holder.mItem.getTipoAuto().getNombre());
 
         holder.touch_linear.setOnClickListener(v -> {
-            rentActivity.getRentCarManager().deliverCar(position, context);
+            rentActivity.getRentCarManager().deliverCar(holder.mItem, position, context);
             notifyDataSetChanged();
         });
 
@@ -83,6 +83,15 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
 
         holder.textViewFechaNacimiento.setText(RentCarTools.dateToString(holder.mItem.getCliente().getFecha_nacimiento()));
 
+        holder.pagado.setText("Pago: $ " + holder.mItem.getPago());
+        holder.deuda.setText("Deuda: $ " + holder.mItem.getDeuda());
+        if (holder.mItem.getDeuda() == 0.0) {
+            holder.deuda.setTextColor(context.getResources().getColor(R.color.white));
+        } else {
+            holder.deuda.setTextColor(context.getResources().getColor(R.color.red_deuda));
+        }
+
+
     }
 
     @Override
@@ -103,6 +112,9 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
         LinearLayout touch_linear;
         TextView textViewStatus;
         TextView seguro;
+
+        TextView pagado;
+        TextView deuda;
 
         public final TextView textViewName;
         public final TextView textViewFechaNacimiento;
@@ -129,6 +141,9 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
             textViewGender = binding.generoUsuario;
             textViewCurp = binding.curp;
             textViewNumCliente = binding.numCliente;
+
+            pagado = binding.pagado;
+            deuda = binding.deuda;
         }
 
     }

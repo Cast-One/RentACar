@@ -11,4 +11,6 @@
     <color name="transparent">#00000000</color>
 
     <color name="entregado">#f2a73d</color>
+    <color name="green_payed">#20c67a</color>
+    <color name="red_deuda">#f50400</color>
 </resources>

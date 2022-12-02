@@ -70,6 +70,13 @@ public class ActionsCarFragment extends Fragment {
 
         }
 
+//        if (activity.getRentCarManager().getLista_CategoriasVehiculos().
+//        get(activity.getIndex_category()).getLista_vehiculos().
+//        get(index_car).getPrecio() >= 60000){
+//            binding.venta.setVisibility(View.VISIBLE);
+//        } else {
+//            binding.venta.setVisibility(View.GONE);
+//        }
         listenners();
 
         return view;
@@ -107,10 +114,15 @@ public class ActionsCarFragment extends Fragment {
         binding.venta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activity.getRentCarTools().showToas("Auto Vendido", GenericToast.SUCCESS);
-                activity.getRentCarManager().changeStatus(activity.getIndex_category(), index_car, StatusCar.VENTA, getContext());
-                activity.CheckFilterAndUpdate();
-                activity.getSupportFragmentManager().popBackStackImmediate();
+                if (activity.getRentCarManager().getLista_CategoriasVehiculos().get(activity.getIndex_category()).getLista_vehiculos().get(index_car).getKilometraje() >= 60000){
+                    activity.getRentCarTools().showToas("Auto Vendido", GenericToast.SUCCESS);
+                    activity.getRentCarManager().changeStatus(activity.getIndex_category(), index_car, StatusCar.VENTA, getContext());
+                    activity.CheckFilterAndUpdate();
+                    activity.getSupportFragmentManager().popBackStackImmediate();
+                } else {
+                    activity.getRentCarTools().showToas("El auto no sobre-pasa el precio requerido.", GenericToast.ERROR);
+                }
+
             }
         });
         binding.renta.setOnClickListener(new View.OnClickListener() {

@@ -9,11 +9,18 @@ public class Renta{
     Cliente cliente;
     Gerente gerente;
     Date fecha_renta;
-    Double precio;
-    Tarjeta tarjeta;
-    Double pago;
 
-    public Renta(Sucursal sucursal, TipoAuto tipoAuto, Vehiculo vehiculo, Cliente cliente, Gerente gerente, Date fecha_renta, Double precio, Tarjeta tarjeta, Double pago) {
+    Tarjeta tarjeta;
+
+    Double precio;
+    Double pago;
+    Double deuda;
+    Integer diasAdeuda;
+
+    Integer index_Category;
+    Integer index_Car;
+
+    public Renta(Sucursal sucursal, TipoAuto tipoAuto, Vehiculo vehiculo, Cliente cliente, Gerente gerente, Date fecha_renta, Double precio, Tarjeta tarjeta, Double pago, Integer index_Category, Integer index_Car) {
         this.sucursal = sucursal;
         this.tipoAuto = tipoAuto;
         this.vehiculo = vehiculo;
@@ -23,6 +30,10 @@ public class Renta{
         this.precio = precio;
         this.tarjeta = tarjeta;
         this.pago = pago;
+        this.deuda = 0.0;
+        this.diasAdeuda = 0;
+        this.index_Category = index_Category;
+        this.index_Car = index_Car;
     }
 
     public Sucursal getSucursal() {
@@ -91,6 +102,38 @@ public class Renta{
 
     public Double getPago() {
         return pago;
+    }
+
+    public Double getDeuda() {
+        return deuda;
+    }
+
+    public void setDeuda(Double deuda) {
+        this.deuda = deuda;
+    }
+
+    public Integer getDiasAdeuda() {
+        return diasAdeuda;
+    }
+
+    public void setDiasAdeuda(Integer diasAdeuda) {
+        this.diasAdeuda = diasAdeuda;
+    }
+
+    public Integer getIndex_Category() {
+        return index_Category;
+    }
+
+    public void setIndex_Category(Integer index_Category) {
+        this.index_Category = index_Category;
+    }
+
+    public Integer getIndex_Car() {
+        return index_Car;
+    }
+
+    public void setIndex_Car(Integer index_Car) {
+        this.index_Car = index_Car;
     }
 
     public void setPago(Double pago) {

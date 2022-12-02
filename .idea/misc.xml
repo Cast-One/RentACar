@@ -16,14 +16,12 @@
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/drawable/border_menu.xml" value="0.143" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_cars_catalog.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_cars_models.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_clientes_catalaog.xml" value="0.13055555555555556" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_login.xml" value="0.13703703703703704" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_main.xml" value="0.13703703703703704" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_rent.xml" value="0.1328125" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_rent_car.xml" value="0.1796875" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_rents.xml" value="0.11944444444444445" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/activity_start.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_active_rents.xml" value="0.1328125" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_active_rents_list.xml" value="0.11875" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_add_c_client.xml" value="0.22" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_add_car.xml" value="0.13333333333333333" />
@@ -31,7 +29,6 @@
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_add_user.xml" value="0.11944444444444445" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_category.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_category_list.xml" value="0.11944444444444445" />
-        <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_clients.xml" value="0.1796875" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_rent.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_rent_car.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/UrielCastillo/Documents/GitHub/RentACar/app/src/main/res/layout/fragment_rent_list.xml" value="0.16666666666666666" />
@@ -45,15 +42,19 @@
         <entry key="app/src/main/res/layout/activity_clientes_catalaog.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/activity_clients_catalog.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/activity_gerente_catalog.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_rent.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/activity_rent_car.xml" value="0.1887031408308004" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_active_rents.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_add_c_client.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_add_car.xml" value="0.2776268115942029" />
-        <entry key="app/src/main/res/layout/fragment_add_gerente.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_add_gerente.xml" value="0.17015991210937503" />
         <entry key="app/src/main/res/layout/fragment_category.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_clients.xml" value="0.2078125" />
         <entry key="app/src/main/res/layout/fragment_clients_list.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_gerente_catalog.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/fragment_gerente_catalog_list.xml" value="0.2776268115942029" />
+        <entry key="app/src/main/res/layout/fragment_rent_car.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/fragment_vehiculo.xml" value="0.2776268115942029" />
       </map>
     </option>

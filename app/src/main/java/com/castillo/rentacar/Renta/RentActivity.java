@@ -44,5 +44,17 @@ public class RentActivity extends AppCompatActivity {
         binding.list.setLayoutManager(new GridLayoutManager(this, 1));
         adapter = new ActiveRentsRecyclerViewAdapter(rentCarManager.getRentaList(), this);
         binding.list.setAdapter(adapter);
+
+        listeners();
+    }
+
+    public void listeners(){
+        binding.nextDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rentCarManager.nextDay(RentActivity.this, rentCarTools);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 }

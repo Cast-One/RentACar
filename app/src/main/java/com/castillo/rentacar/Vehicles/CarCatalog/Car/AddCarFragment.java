@@ -86,6 +86,18 @@ public class AddCarFragment extends Fragment {
             activity.rentCarTools.showToas("Ingresa el año del vehiculo", GenericToast.WARNING);
             return false;
         }
+
+        if (activity.rentCarTools.emptyField(binding.textMatricula)){
+            activity.rentCarTools.showToas("Ingresa la matrícula", GenericToast.WARNING);
+            return false;
+        }
+
+        if (!activity.getRentCarManager().validateMatricula(binding.textMatricula.getText().toString())) {
+            activity.rentCarTools.showToas("Esa matrícula ya se encuentra registrada", GenericToast.WARNING);
+            return false;
+        }
+
+
         if (activity.rentCarTools.emptyField(binding.textNumeroPlazas)){
             activity.rentCarTools.showToas("Digita el número de plazas (asientos)", GenericToast.WARNING);
             return false;
@@ -98,6 +110,7 @@ public class AddCarFragment extends Fragment {
             activity.rentCarTools.showToas("Escribe el precio del vehiculo", GenericToast.WARNING);
             return false;
         }
+
 
         return true;
     }

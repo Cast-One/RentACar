@@ -7,6 +7,17 @@
     android:background="@color/black"
     tools:context=".Vehicles.CarCatalog.Car.CarsModelsActivity">
 
+
+    <ImageView
+        android:id="@+id/next_day"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toTopOf="@id/text_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="right"
+        android:src="@drawable/next_dat"/>
+
     <TextView
         android:id="@+id/text_title"
         android:layout_width="match_parent"

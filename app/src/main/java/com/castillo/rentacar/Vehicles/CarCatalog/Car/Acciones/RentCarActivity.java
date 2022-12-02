@@ -78,6 +78,7 @@ public class RentCarActivity extends AppCompatActivity {
     public void showData(){
         Vehiculo vehiculo = rentCarManager.getLista_CategoriasVehiculos().get(index_category).
                 getLista_vehiculos().get(index_car);
+        binding.costo.setText(String.valueOf(vehiculo.getPrecio()));
         binding.modelo.setText(vehiculo.getModelo());
         binding.marca.setText(vehiculo.getMarca());
         binding.ano.setText(String.format("Año: %s", vehiculo.getAnio()));
@@ -135,7 +136,7 @@ public class RentCarActivity extends AppCompatActivity {
                 Tarjeta tarjeta = new Tarjeta(binding.cardForm.getCardNumber(), date, cvsShor);
 
                 Renta renta = new Renta(sucursal,
-                        tipoAuto, vehiculo, cliente, gerente, todayRent, precio, tarjeta, pago);
+                        tipoAuto, vehiculo, cliente, gerente, todayRent, precio, tarjeta, pago, index_category, index_car);
 
                 rentCarManager.addRent(renta, RentCarActivity.this);
                 RentCarActivity.super.onBackPressed();

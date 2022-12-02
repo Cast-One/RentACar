@@ -160,7 +160,6 @@
         android:padding="10dp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/cliente"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="wrap_content">
         <ImageView
             android:layout_width="50dp"
@@ -206,5 +205,37 @@
                 android:textColor="@color/white"/>
         </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line1"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/pagado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/green_payed"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/deuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cliente"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
