@@ -104,6 +104,15 @@ public class ActionsCarFragment extends Fragment {
             activity.CheckFilterAndUpdate();
             activity.getSupportFragmentManager().popBackStackImmediate();
         });
+        binding.venta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activity.getRentCarTools().showToas("Auto Vendido", GenericToast.SUCCESS);
+                activity.getRentCarManager().changeStatus(activity.getIndex_category(), index_car, StatusCar.VENTA, getContext());
+                activity.CheckFilterAndUpdate();
+                activity.getSupportFragmentManager().popBackStackImmediate();
+            }
+        });
         binding.renta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

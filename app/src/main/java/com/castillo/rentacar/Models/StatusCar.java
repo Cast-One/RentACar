@@ -6,6 +6,7 @@ public enum StatusCar {
     EN_MANTENIMIENTO("Mantenimiento"),
     ROBADO("Robado"),
     ENTREGADO("Entregado"),
+    VENTA("Venta"),
     BAJA("Baja");
 
     private final String nombre;

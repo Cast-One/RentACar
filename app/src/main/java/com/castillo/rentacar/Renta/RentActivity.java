@@ -41,7 +41,7 @@ public class RentActivity extends AppCompatActivity {
         rentCarManager = RentCarManager.getInstance(this);
 
 
-        binding.list.setLayoutManager(new GridLayoutManager(this, 2));
+        binding.list.setLayoutManager(new GridLayoutManager(this, 1));
         adapter = new ActiveRentsRecyclerViewAdapter(rentCarManager.getRentaList(), this);
         binding.list.setAdapter(adapter);
     }

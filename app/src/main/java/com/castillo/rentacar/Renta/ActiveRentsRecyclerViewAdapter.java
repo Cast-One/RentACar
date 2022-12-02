@@ -2,6 +2,7 @@ package com.castillo.rentacar.Renta;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.aidev.generictoast.GenericToast;
 import com.castillo.rentacar.Models.Renta;
 import com.castillo.rentacar.Models.StatusCar;
 import com.castillo.rentacar.R;
+import com.castillo.rentacar.Tools.RentCarTools;
 import com.castillo.rentacar.Vehicles.CarCatalog.Car.ActionsCarFragment;
 import com.castillo.rentacar.databinding.FragmentActiveRentsBinding;
 
@@ -65,11 +67,21 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
         holder.seguro.setVisibility(View.VISIBLE);
         if (holder.mItem.getVehiculo().getStatusCar() == StatusCar.RENTADO) {
             holder.seguro.setText("No entregado");
+            holder.linearLayoutStatus.setBackgroundColor(context.getResources().getColor(R.color.white));
         } else if (holder.mItem.getVehiculo().getStatusCar() == StatusCar.ENTREGADO) {
             holder.seguro.setText("Entregado");
+            holder.linearLayoutStatus.setBackgroundColor(context.getResources().getColor(R.color.entregado));
         } else {
             holder.seguro.setText(holder.mItem.getVehiculo().getStatusCar().getNombre());
         }
+
+
+        holder.textViewName.setText(holder.mItem.getCliente().getNombre()+" "+holder.mItem.getCliente().getMaterno()+" "+holder.mItem.getCliente().getPaterno());
+        holder.textViewGender.setText("Género: "+holder.mItem.getCliente().getGenero() + "");
+        holder.textViewCurp.setText(holder.mItem.getCliente().getCurp());
+        holder.textViewNumCliente.setText(holder.mItem.getCliente().getNum_cliente());
+
+        holder.textViewFechaNacimiento.setText(RentCarTools.dateToString(holder.mItem.getCliente().getFecha_nacimiento()));
 
     }
 
@@ -92,6 +104,12 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
         TextView textViewStatus;
         TextView seguro;
 
+        public final TextView textViewName;
+        public final TextView textViewFechaNacimiento;
+        public final TextView textViewGender;
+        public final TextView textViewCurp;
+        public final TextView textViewNumCliente;
+
         public ViewHolder(FragmentActiveRentsBinding binding) {
             super(binding.getRoot());
             marca = binding.marca;
@@ -105,6 +123,12 @@ public class ActiveRentsRecyclerViewAdapter extends RecyclerView.Adapter<ActiveR
             touch_linear = binding.touchLinear;
             textViewStatus = binding.textStatus;
             seguro = binding.seguro;
+
+            textViewName = binding.name;
+            textViewFechaNacimiento = binding.fechaNacimiento;
+            textViewGender = binding.generoUsuario;
+            textViewCurp = binding.curp;
+            textViewNumCliente = binding.numCliente;
         }
 
     }

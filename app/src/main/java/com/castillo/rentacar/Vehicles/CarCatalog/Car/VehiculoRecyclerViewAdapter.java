@@ -54,6 +54,14 @@ public class VehiculoRecyclerViewAdapter extends RecyclerView.Adapter<VehiculoRe
                 activity.getRentCarTools().showToas("EL vehículo se encuentra en renta.", GenericToast.ERROR);
                 return;
             }
+            if (holder.mItem.getStatusCar() ==StatusCar.BAJA){
+                activity.getRentCarTools().showToas("EL vehículo se encuentra dado de baja.", GenericToast.ERROR);
+                return;
+            }
+            if (holder.mItem.getStatusCar() ==StatusCar.VENTA){
+                activity.getRentCarTools().showToas("EL vehículo se encuentra vendido.", GenericToast.ERROR);
+                return;
+            }
             activity.rentCarTools.openFragment(R.id.fragmentView, new ActionsCarFragment(position), activity.getSupportFragmentManager().beginTransaction());
         });
 
